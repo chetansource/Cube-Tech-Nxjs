@@ -2,6 +2,7 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import RightArrowIcon from "./icons/right-arrow";
+import Image from "next/image";
 
 const ResourceDevelopment = () => {
   return (
@@ -13,7 +14,7 @@ const ResourceDevelopment = () => {
       <div className="absolute top-0 right-0 p-2 py-18 md:p-8 grid md:grid-cols-2 gap-4 md:gap-8">
         {/* First Blurred Container */}
         <div className="relative bg-white/5 backdrop-blur-sm rounded-lg p-4 ">
-          <img
+          <Image
             src="/long-highway-2.webp"
             alt="Placeholder"
             className=" w-[200px] h-[100px] md:w-[347px] md:h-[181px] object-cover flex-shrink-0 "
@@ -28,7 +29,7 @@ const ResourceDevelopment = () => {
 
         {/* Second Blurred Container */}
         <div className="relative bg-white/5 backdrop-blur-sm rounded-lg p-4   ">
-          <img
+          <Image
             src="/long-highway-2.webp"
             alt="Placeholder"
             className="w-[200px] h-[100px] md:w-[347px] md:h-[181px] object-cover flex-shrink-0 "

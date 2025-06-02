@@ -7,6 +7,7 @@ import MailIcon from "./icons/mail";
 import RightArrowIcon from "./icons/right-arrow";
 import UpArrowIcon from "./icons/up-arrow";
 import DownArrow from "./icons/mobile-icons/DownArrow";
+import Image from "next/image";
 
 export default function Footer() {
   const [isCompanyOpen, setCompanyOpen] = useState(false);
@@ -275,14 +276,14 @@ export default function Footer() {
       {/* Footer SVG */}
       <div className="relative">
         <div className=" px-1 py-8 md:p-12">
-          <img
+          <Image
             src="/Group-Footer.svg"
             alt="Footer Icon1"
             className="w-full h-full object-contain"
           />
         </div>
         <div className="px-1 py-8 md:p-12">
-          <img
+          <Image
             src="/Group-Footer2.svg"
             alt="Footer Icon2"
             className="w-[90%] h-full object-contain"

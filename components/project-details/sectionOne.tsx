@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import UpArrowIcon from "../icons/up-arrow";
+import Image from "next/image";
 
 interface ParkingStudyProps {
   title: string;
@@ -20,7 +21,6 @@ export const SectionOne: React.FC<ParkingStudyProps> = ({
   date,
   description,
   mainImage,
-  thumbnails,
 }) => {
   const [expanded, setExpanded] = useState(true);
 
@@ -68,7 +68,7 @@ export const SectionOne: React.FC<ParkingStudyProps> = ({
 
           {/* Main image with thumbnails */}
           <div className="relative">
-            <img
+            <Image
               src={mainImage}
               alt="Aerial view of highway"
               className="w-full h-80 object-cover rounded-sm"

@@ -67,7 +67,7 @@ export default function Hero({
           <div className="absolute left-0 bottom-0 p-4 md:p-8 grid md:grid-cols-3 gap-4 ">
             {/* First Blurred Container */}
             <div className="relative bg-white/5 backdrop-blur-sm rounded-lg p-4 md:w-[347px] md:h-[247px]">
-              <img
+              <Image
                 src="/long-highway-2.webp"
                 alt="Placeholder"
                 className="w-[200px] h-[100px] md:w-[347px] md:h-[181px] object-cover flex-shrink-0 "
@@ -82,7 +82,7 @@ export default function Hero({
 
             {/* Second Blurred Container */}
             <div className="relative bg-white/5 backdrop-blur-sm rounded-lg p-4 md:w-[347px] md:h-[247px]">
-              <img
+              <Image
                 src="/long-highway-2.webp"
                 alt="Placeholder"
                 className="w-[200px] h-[100px] md:w-[347px] md:h-[181px] object-cover flex-shrink-0 sm:w-full sm:h-auto"

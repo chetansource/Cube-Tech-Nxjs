@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import RightArrowIcon from "./icons/right-arrow";
+import Image from "next/image";
 
 // Project data structure
 interface Project {
@@ -73,7 +74,7 @@ export default function ProjectMap() {
       {/* Background Map */}
 
       <div className="absolute inset-0 bg-[#212121] bg-cover bg-no-repeat  ">
-        <img
+        <Image
           src="/highly-detailed-map.svg"
           alt="India Map Background"
           className="h-full w-full object-contain absolute top-0 md:left-80"
@@ -81,7 +82,10 @@ export default function ProjectMap() {
 
         {/* Map outline overlay - in a real implementation, you'd use an SVG of India */}
         <div className="absolute inset-0 flex items-center md:justify-center md:left-70">
-          <svg viewBox="0 0 100 100" className="w-[65%] md:w-[80%] h-[60%] md:h-[80%]">
+          <svg
+            viewBox="0 0 100 100"
+            className="w-[65%] md:w-[80%] h-[60%] md:h-[80%]"
+          >
             {/* This would be replaced with actual SVG path data for India */}
             <path
               d="M20,20 L80,20 L80,80 L20,80 Z"
@@ -163,10 +167,10 @@ export default function ProjectMap() {
           }}
         >
           <div className=" overflow-hidden mb-4 bg-black/30">
-            <img
-              src={activeProject.image}
-              alt={activeProject.name}
-              className=" md:w-[347px] md:h-[181px] object-cover flex-shrink-0 "
+            <Image
+              src={activeProject.image ?? "/placeholder.jpg"}
+              alt={activeProject.name ?? "Project image"}
+              className="md:w-[347px] md:h-[181px] object-cover flex-shrink-0"
             />
           </div>
           <div className="flex flex-row items-start justify-between w-full mt-2">

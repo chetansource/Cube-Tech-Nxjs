@@ -9,21 +9,21 @@ import LeftArrowIcon from '@/components/icons/left-arrow';
 import Timeline from '@/components/about-us/Timeline';
 
 
-const podcasts = [
-  {
-    image: "/leadership-banner-1.webp",
-    title:
-      "Revolutionizing Infrastructure: Innovations in Transportation & Road Design",
-  },
-  {
-    image: "/leadership-banner-1.webp",
-    title: "Paving the Future: Smart Solutions in Highway Infrastructure",
-  },
-  {
-    image: "/leadership-banner-1.webp",
-    title: "Innovations in Sustainable Transport and Mobility",
-  },
-];
+// const podcasts = [
+//   {
+//     image: "/leadership-banner-1.webp",
+//     title:
+//       "Revolutionizing Infrastructure: Innovations in Transportation & Road Design",
+//   },
+//   {
+//     image: "/leadership-banner-1.webp",
+//     title: "Paving the Future: Smart Solutions in Highway Infrastructure",
+//   },
+//   {
+//     image: "/leadership-banner-1.webp",
+//     title: "Innovations in Sustainable Transport and Mobility",
+//   },
+// ];
 
 
 const AboutUsPage = () => {
@@ -63,9 +63,9 @@ const AboutUsPage = () => {
             <h2 className="text-[46px] font-light mb-12 leading-[40px]">
               LEADERSHIP
             </h2>
-            <p className="md:w-[70%] text-sm text-muted-foreground mb-8 leading-[20px] text-[#404040]">
+            <p className="md:w-[70%] text-sm  mb-8 leading-[20px] text-[#404040]">
               We provide strong and dependable leadership to drive success and
-              innovation within your organization. Whether it's strategic
+              innovation within your organization. Whether it&#39;s strategic
               planning, team management, or decision-making, our experienced
               leaders offer guidance and solutions that foster growth, enhance
               efficiency, and ensure long-term stability.
@@ -81,51 +81,42 @@ const AboutUsPage = () => {
 
           {/* Podcast Cards */}
           <div className="col-span-1 rounded-md overflow-hidden shadow-md relative ">
-            <img
+            <Image
               src="leadership-banner-1.webp"
               alt="Revolutionizing Infrastructure"
               className="w-full h-full object-cover"
             />
-            <div className="text-white p-4  absolute bottom-0 left-0 right-0 text-card-foreground">
+            <div className="text-white p-4  absolute bottom-0 left-0 right-0 ">
               <p className="text-sm flex gap-4 mb-4">NAME</p>
-              <a
-                href="#"
-                className=" text-white text-lg font-semibold  block text-card-foreground"
-              >
+              <a href="#" className=" text-white text-lg font-semibold  block ">
                 Designation
               </a>
             </div>
           </div>
 
           <div className="col-span-1 rounded-md overflow-hidden shadow-md relative ">
-            <img
+            <Image
               src="leadership-banner-1.webp"
               alt="Revolutionizing Infrastructure"
               className="w-full h-full object-cover"
             />
-            <div className="text-white p-4  absolute bottom-0 left-0 right-0 text-card-foreground">
+            <div className="text-white p-4  absolute bottom-0 left-0 right-0 ">
               <p className="text-sm flex gap-4 mb-4">NAME</p>
-              <a
-                href="#"
-                className=" text-white text-lg font-semibold  block text-card-foreground"
-              >
+              <a href="#" className=" text-white text-lg font-semibold  block">
                 Designation
               </a>
             </div>
           </div>
 
           <div className="col-span-1 rounded-md overflow-hidden shadow-md relative ">
-            <img
+            <Image
               src="leadership-banner-1.webp"
               alt="Revolutionizing Infrastructure"
               className="w-full h-full object-cover"
             />
-            <div className="text-white p-4  absolute bottom-0 left-0 right-0 text-card-foreground">
+            <div className="text-white p-4  absolute bottom-0 left-0 right-0 ">
               <p className="text-sm flex gap-4 mb-4">NAME</p>
-              <a
-                href="#"
-                className=" text-white text-lg font-semibold  block text-card-foreground"
-              >
+              <a href="#" className=" text-white text-lg font-semibold  block">
                 Designation
               </a>
             </div>

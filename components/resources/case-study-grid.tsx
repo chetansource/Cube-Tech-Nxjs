@@ -13,9 +13,8 @@ const CaseStudyGrid: React.FC = () => {
             <RightArrowIcon color="#5FBA51" />
           </div>
 
-          <h3 className=" text-lg font-semibold md:leading-[22px] md:tracking-[0.75px] mb-2">
-            CubeHighways&apos; Technology-Driven Approach to Corporate Social
-            Responsibility
+          <h3 className="text-lg font-semibold md:leading-[22px] md:tracking-[0.75px] mb-2">
+            {`CubeHighway's Technology-Driven Approach to Corporate Social Responsibility`}
           </h3>
 
           <p className="text-lg text-black/60 mb-2">11/02/2025</p>
@@ -33,8 +32,7 @@ const CaseStudyGrid: React.FC = () => {
           </div>
 
           <h3 className=" text-lg font-semibold md:leading-[22px] md:tracking-[0.75px] mb-2">
-            CubeHighways&apos; Technology-Driven Approach to Corporate Social
-            Responsibility
+            {`CubeHighway's Technology-Driven Approach to Corporate Social Responsibility`}
           </h3>
 
           <p className="text-lg text-black/60 mb-2">11/02/2025</p>
@@ -148,8 +146,7 @@ const CaseStudyGrid: React.FC = () => {
           </div>
 
           <h3 className=" text-lg font-semibold md:leading-[22px] md:tracking-[0.75px] mb-2">
-            CubeHighways&apos; Technology-Driven Approach to Corporate Social
-            Responsibility
+            {`CubeHighway's Technology-Driven Approach to Corporate Social Responsibility`}
           </h3>
 
           <p className="text-lg text-black/60 mb-2">11/02/2025</p>

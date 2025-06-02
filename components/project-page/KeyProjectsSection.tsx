@@ -37,25 +37,25 @@ export default function KeyProjectsSection({
 
   // Set up intersection observer to detect when section is in viewport
   useEffect(() => {
+    const currentSection = sectionRef.current;
+
+    if (!currentSection) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
         setIsInView(entry.isIntersecting);
       },
-      { threshold: 0.1 } // Trigger when at least 10% of the section is visible
+      { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    observer.observe(currentSection);
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      observer.unobserve(currentSection);
     };
   }, []);
-
+  
   // Control the animation based on viewport visibility
   useEffect(() => {
     if (!carouselRef.current) return;

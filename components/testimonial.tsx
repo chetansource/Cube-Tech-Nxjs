@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+// import { ChevronLeft, ChevronRight } from 'lucide-react';
 import RightArrowIcon from './icons/right-arrow';
 import LeftArrowIcon from './icons/left-arrow';
+import Image from 'next/image';
 
 interface Testimonial {
   id: number;
@@ -133,7 +134,7 @@ export function Testimonial() {
                   </div>
 
                   <div className="flex  items-end">
-                    <img
+                    <Image
                       src={testimonial.avatar}
                       alt={`${testimonial.author} avatar`}
                       className="w-8 h-8 md:w-12 md:h-12 rounded-full mr-4"

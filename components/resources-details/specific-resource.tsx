@@ -93,8 +93,8 @@ export default function SpecificResource() {
               helping authorities enhance road network efficiency. The findings
               will support data-driven policymaking, smart city initiatives, and
               sustainable urban transport planning, ensuring a smoother, safer,
-              and more efficient commuting experience for Delhi's residents and
-              visitors.
+              and more efficient commuting experience for Delhi&#39;s residents
+              and visitors.
             </p>
           </div>
         </div>

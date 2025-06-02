@@ -1,17 +1,17 @@
 'use client'
 import Header from "@/components/header";
 import React, { useState } from "react";
-import Link from "next/link";
+// import Link from "next/link";
 import PhoneIcon from "@/components/icons/Phone";
 import ContactMailicon from "@/components/icons/ContactMail";
 import ContactLocation from "@/components/icons/ContactLocation";
 import ContactFollowIcon from "@/components/icons/ContactFollowIcon";
-import DownArrowIcon from "@/components/icons/down-arrow";
+// import DownArrowIcon from "@/components/icons/down-arrow";
 
 const ContactUsPage = () => {
  const [selectedOption, setSelectedOption] = useState("");
 
-      const handleSelectChange = (event:any) => {
+      const handleSelectChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
         setSelectedOption(event.target.value);
       }
   return (
@@ -27,7 +27,7 @@ const ContactUsPage = () => {
             {/* Left side - Contact Info */}
             <div className="w-full pr-[204px]">
               <h1 className="text-[75px] font-light  leading-[112px]">
-                LET'S GET IN
+                LET&#39;S GET IN
               </h1>
               <h1 className="text-[66px] font-bold italic leading-[99px] mb-[71px]">
                 TOUCH

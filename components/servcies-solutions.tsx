@@ -2,10 +2,11 @@
 
 import { useState, useRef } from "react";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+// import { ChevronLeft, ChevronRight } from "lucide-react";
 import RightArrowIcon from "./icons/right-arrow";
 import LeftArrowIcon from "./icons/left-arrow";
 import UpArrowIcon from "./icons/up-arrow";
+import Image from "next/image";
 
 export default function ServicesSolutions() {
   // Static data for solutions
@@ -126,7 +127,7 @@ export default function ServicesSolutions() {
                         >
                           {/* First container */}
                           <div className=" bg-white/5 backdrop-blur-sm rounded-lg p-4 min-w-[347px] h-[247px]">
-                            <img
+                            <Image
                               src="/long-highway-2.webp"
                               alt="Placeholder"
                               className=" w-[347px] h-[181px] object-cover flex-shrink-0 sm:w-full sm:h-auto"
@@ -141,7 +142,7 @@ export default function ServicesSolutions() {
 
                           {/* Second container */}
                           <div className=" bg-white/5 backdrop-blur-sm rounded-lg p-4 min-w-[347px] h-[247px]">
-                            <img
+                            <Image
                               src="/long-highway-2.webp"
                               alt="Placeholder"
                               className=" w-[347px] h-[181px] object-cover flex-shrink-0 sm:w-full sm:h-auto"
@@ -156,7 +157,7 @@ export default function ServicesSolutions() {
 
                           {/* Additional containers for scrolling demonstration */}
                           <div className=" bg-white/5 backdrop-blur-sm rounded-lg p-4 min-w-[347px] h-[247px]">
-                            <img
+                            <Image
                               src="/long-highway-2.webp"
                               alt="Placeholder"
                               className=" w-[347px] h-[181px] object-cover flex-shrink-0 sm:w-full sm:h-auto"

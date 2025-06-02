@@ -6,46 +6,40 @@ import RightArrowIcon from "./icons/right-arrow"
 import { getFaqs } from "@/utils/routes/faq";
 
 export default function Faq() {
-  const fallbackFaqs: Faq[] = [
-    {
-      id: "1",
-      question: "What is the purpose of this website?",
-      answer:
-        "This website provides detailed insights and analytics about traffic and infrastructure projects.",
-    },
-    {
-      id: "2",
-      question: "How often is the data updated?",
-      answer:
-        "We update our data regularly after every new survey or project milestone.",
-    },
-    {
-      id: "3",
-      question: "Who conducts the traffic surveys?",
-      answer:
-        "All traffic surveys are conducted by CubeTech using advanced methodologies and tools.",
-    },
-    {
-      id: "4",
-      question: "Can I download traffic reports?",
-      answer:
-        "Yes, traffic reports are available under the Reports section. Some may require authentication.",
-    },
-    {
-      id: "5",
-      question: "Is the data open for public use?",
-      answer:
-        "Yes, most of the data is publicly accessible unless restricted due to client privacy.",
-    },
-  ];
-  
-  
-
-
-  const [faqs, setFaqs] = useState<Faq[]>([]);
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
-
   useEffect(() => {
+    const fallbackFaqs: Faq[] = [
+      {
+        id: "1",
+        question: "What is the purpose of this website?",
+        answer:
+          "This website provides detailed insights and analytics about traffic and infrastructure projects.",
+      },
+      {
+        id: "2",
+        question: "How often is the data updated?",
+        answer:
+          "We update our data regularly after every new survey or project milestone.",
+      },
+      {
+        id: "3",
+        question: "Who conducts the traffic surveys?",
+        answer:
+          "All traffic surveys are conducted by CubeTech using advanced methodologies and tools.",
+      },
+      {
+        id: "4",
+        question: "Can I download traffic reports?",
+        answer:
+          "Yes, traffic reports are available under the Reports section. Some may require authentication.",
+      },
+      {
+        id: "5",
+        question: "Is the data open for public use?",
+        answer:
+          "Yes, most of the data is publicly accessible unless restricted due to client privacy.",
+      },
+    ];
+
     const fetchData = async () => {
       try {
         const faqData = await getFaqs();
@@ -59,8 +53,18 @@ export default function Faq() {
         setFaqs(fallbackFaqs);
       }
     };
+
     fetchData();
   }, []);
+  
+  
+  
+
+
+  const [faqs, setFaqs] = useState<Faq[]>([]);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+
 
 
   

@@ -7,6 +7,7 @@ import ProjectMap from "@/components/project-map";
 import PopularSearch from "@/components/popular-searche";
 import ServicesSolutions from "@/components/servcies-solutions";
 import Link from "next/link";
+import Image from "next/image";
 
 const Services = () => {
   return (
@@ -23,7 +24,7 @@ const Services = () => {
       />
       {/* services offered section */}
       <section className="w-full relative overflow-hidden">
-        <img
+        <Image
           src="/Explore-Our-Services.svg"
           alt="Explore Our Services"
           className="md:w-7xl h-[45vh] md:h-[50vh] ml-4 md:ml-[60px] md:mr-[170px]"

@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 interface ProjectTag {
   name: string;
@@ -113,7 +114,7 @@ export function ExploreMoreProjectsSection() {
             className="flex-shrink-0 w-[85%] sm:w-[75%] md:w-auto snap-start flex flex-col h-full"
           >
             <div className="relative overflow-hidden mb-4 h-[392px]">
-              <img
+              <Image
                 src={project.image}
                 alt={project.title}
                 className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"

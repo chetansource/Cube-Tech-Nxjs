@@ -20,7 +20,7 @@ export default function Home() {
         title={
           <>
             <div className="md:flex gap-4">
-              WE'RE IN{" "}
+              WE&#39;RE IN{" "}
               <div className=" text-white font-semibold italic my-5 md:my-0">
                 BUSINESS
               </div>

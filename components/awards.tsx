@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 
 interface AwardProps {
@@ -12,7 +13,8 @@ const awardData: AwardProps[] = new Array(10).fill(null).map((_, index) => ({
   logo: "",
   name: `Award ${index + 1}`,
   date: "11/02/2024",
-  description: "Description - Lorem ipsum dolor sit amet, consectetur adipiscing",
+  description:
+    "Description - Lorem ipsum dolor sit amet, consectetur adipiscing",
 }));
 
 const AwardItem: React.FC<AwardProps> = ({ logo, name, date, description }) => {
@@ -20,7 +22,7 @@ const AwardItem: React.FC<AwardProps> = ({ logo, name, date, description }) => {
     <div className="flex flex-col min-w-[300px] mx-20">
       <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
         <div className="absolute inset-0">
-          <img
+          <Image
             src="/awards-image.webp"
             alt="Logo"
             className="w-full h-full object-contain"
@@ -48,7 +50,7 @@ const Awards = () => {
 
     const scroll = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
-      const elapsed = timestamp - startTime;
+      // const elapsed = timestamp - startTime;
 
       if (scrollContainer) {
         // Slow continuous scroll from right to left
@@ -76,7 +78,7 @@ const Awards = () => {
   return (
     <section className=" bg-white relative overflow-hidden pb-[300px]">
       <div className=" md:py-8 md:p-12 relative">
-        <img
+        <Image
           src="/Accolades & Recognition.svg"
           alt="Footer Icon1"
           className="absolute w-[90%] md:w-[80%] h-full object-contain pl-4   md:pl-[39px] md:pr-[170px] md:text-[181px]"

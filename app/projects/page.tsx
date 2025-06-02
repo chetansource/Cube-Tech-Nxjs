@@ -58,7 +58,7 @@ const ProjectsPage = () => {
       {/* hero section start */}
       <section className="relative w-full bg-white mb-[97px] overflow-hidden h-[527px]">
         <div className="absolute top-0 bottom-0 left-0 md:right-[57px] z-0">
-          <img
+          <Image
             src="/project-banner.webp"
             alt="Hero background"
             className="object-cover w-full h-full"

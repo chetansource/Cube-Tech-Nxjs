@@ -1,12 +1,13 @@
 "use client";
 import React from "react";
-import { useParams } from "next/navigation";
+// import { useParams } from "next/navigation";
 import Header from "@/components/header";
 import PolygonIcon from "@/components/icons/polygon";
 import { Breadcrumb } from "@/components/project-page/bread-crump";
 import { SectionOne } from "@/components/project-details/sectionOne";
 import { ProjectImpact } from "@/components/project-details/projectImpact";
 import ProjectsCarousel from "@/components/project-details/project-carousel";
+import Image from "next/image";
 
 const parkingStudyData = {
   title: "CAR PARKING AT",
@@ -25,15 +26,15 @@ const parkingStudyData = {
 };
 
 const ProjectDetailsPage = () => {
-  const params = useParams();
-  const { id } = params;
+  // const params = useParams();
+  // const { id } = params;
   return (
     <div className="min-h-screen">
       <Header />
       {/* hero section start */}
       <section className="relative w-full bg-white mb-[97px] overflow-hidden h-[527px]">
         <div className="absolute top-0 bottom-0 left-0 right-[57px] z-0">
-          <img
+          <Image
             src="/project-banner.webp"
             alt="Hero background"
             className="object-cover w-full h-full"

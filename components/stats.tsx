@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import UpArrowIcon from "./icons/up-arrow";
+// import UpArrowIcon from "./icons/up-arrow";
 import PlusIcon from "./icons/Plus";
+import Image from "next/image";
 
 interface Metric {
   value: number;
@@ -25,35 +26,35 @@ const metrics: Metric[] = [
   },
 ];
 
-function useIntersection(
-  element: React.RefObject<HTMLElement | null>,
-  rootMargin: string
-): boolean {
-  const [isIntersecting, setIsIntersecting] = useState(false);
+// function useIntersection(
+//   element: React.RefObject<HTMLElement | null>,
+//   rootMargin: string
+// ): boolean {
+//   const [isIntersecting, setIsIntersecting] = useState(false);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsIntersecting(entry.isIntersecting);
-      },
-      {
-        rootMargin,
-      }
-    );
+//   useEffect(() => {
+//     const observer = new IntersectionObserver(
+//       ([entry]) => {
+//         setIsIntersecting(entry.isIntersecting);
+//       },
+//       {
+//         rootMargin,
+//       }
+//     );
 
-    if (element.current) {
-      observer.observe(element.current);
-    }
+//     if (element.current) {
+//       observer.observe(element.current);
+//     }
 
-    return () => {
-      if (element.current) {
-        observer.unobserve(element.current);
-      }
-    };
-  }, [element, rootMargin]);
+//     return () => {
+//       if (element.current) {
+//         observer.unobserve(element.current);
+//       }
+//     };
+//   }, [element, rootMargin]);
 
-  return isIntersecting;
-}
+//   return isIntersecting;
+// }
 
 function AnimatedNumber({ number }: { number: number }) {
   const [count, setCount] = useState(0);
@@ -90,7 +91,7 @@ function AnimatedNumber({ number }: { number: number }) {
 
 export default function Stats({ bannerImage }: { bannerImage?: string }) {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const isVisible = useIntersection(sectionRef, "0px");
+  // const isVisible = useIntersection(sectionRef, "0px");
 
   return (
     <div
@@ -100,7 +101,7 @@ export default function Stats({ bannerImage }: { bannerImage?: string }) {
     >
       {bannerImage && (
         <div className="pl-4 md:pl-[37px] md:pr-[171px] md:text-[181px]">
-          <img
+          <Image
             className="object-cover w-[90%] md:w-[80%]"
             src={bannerImage}
             alt="Card Image"

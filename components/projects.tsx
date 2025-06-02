@@ -1,6 +1,7 @@
 'use client'
 import React,{useEffect} from "react";
 import RightArrowIcon from "./icons/right-arrow";
+import Image from "next/image";
 
 const Projects = () => {
   useEffect(() => {
@@ -49,7 +50,7 @@ const Projects = () => {
         className="flex gap-3 md:gap-[43px] md:flex-row flex-nowrap w-max md:w-full"
       >
         <div className="container w-[24%] md:w-[696px] ">
-          <img
+          <Image
             className="w-full h-[392px] object-cover"
             src="/long-highway2.webp"
             alt="Card Image"
@@ -75,7 +76,7 @@ const Projects = () => {
           </div>
         </div>
         <div className="container w-[637.696px]">
-          <img
+          <Image
             className="w-full h-[392px] object-cover"
             src="/long-highway2.webp"
             alt="Card Image"

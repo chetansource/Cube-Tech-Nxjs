@@ -13,7 +13,7 @@ const ImpactCard: React.FC<ImpactCardProps> = ({
   icon,
   title,
   description,
-  color = "bg-white",
+  // color = "bg-white",
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
@@ -73,6 +73,7 @@ export function ProjectImpact() {
       color: "bg-white",
     },
   ];
+  console.log(currentIndex);
 
   // Auto-scroll the carousel
   useEffect(() => {
