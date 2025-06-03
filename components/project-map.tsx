@@ -74,11 +74,14 @@ export default function ProjectMap() {
       {/* Background Map */}
 
       <div className="absolute inset-0 bg-[#212121] bg-cover bg-no-repeat  ">
-        <Image
-          src="/highly-detailed-map.svg"
-          alt="India Map Background"
-          className="h-full w-full object-contain absolute top-0 md:left-80"
-        />
+        <div className="h-full w-full">
+          <Image
+            src="/highly-detailed-map.svg"
+            alt="India Map Background"
+            fill
+            className=" object-contain absolute top-0 md:left-80"
+          />
+        </div>
 
         {/* Map outline overlay - in a real implementation, you'd use an SVG of India */}
         <div className="absolute inset-0 flex items-center md:justify-center md:left-70">

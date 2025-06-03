@@ -43,18 +43,21 @@ const Projects = () => {
   return (
     <section
       id="project-scroll-container"
-      className="group md:flex md:pl-[63px] pb-[130px] pl-4 overflow-x-auto md:overflow-visible cursor-grab active:cursor-grabbing select-none"
+      className="group md:flex md:px-[63px] pb-[130px] pl-4 overflow-x-auto md:overflow-visible cursor-grab active:cursor-grabbing select-none"
     >
       <div
         id="project-scroll-inner"
-        className="flex gap-3 md:gap-[43px] md:flex-row flex-nowrap w-max md:w-full"
+        className="flex md:grid md:grid-cols-2 md:gap-8 flex-nowrap w-max md:w-full"
       >
-        <div className="container w-[24%] md:w-[696px] ">
-          <Image
-            className="w-full h-[392px] object-cover"
-            src="/long-highway2.webp"
-            alt="Card Image"
-          />
+        <div className="container w-[85vw] md:w-full">
+          <div className="relative w-full h-[392px]">
+            <Image
+              className=" object-cover"
+              src="/long-highway2.webp"
+              alt="Card Image"
+              fill
+            />
+          </div>
 
           <h2 className="text-base md:text-2xl font-normal text-black pt-[36px] leading-[24px] md:leading-[35px] tracking-[0.75px]">
             2 Days Traffic Counts of Commercial Traffic Entering Delhi{" "}
@@ -75,12 +78,15 @@ const Projects = () => {
             </span>
           </div>
         </div>
-        <div className="container w-[637.696px]">
-          <Image
-            className="w-full h-[392px] object-cover"
-            src="/long-highway2.webp"
-            alt="Card Image"
-          />
+        <div className="container w-[85vw] md:w-full ">
+          <div className="relative w-full h-[392px]">
+            <Image
+              className=" object-cover"
+              src="/long-highway2.webp"
+              alt="Card Image"
+              fill
+            />
+          </div>
 
           <h2 className="text-base md:text-2xl  font-normal text-black pt-[36px] leading-[24px] md:leading-[35px] tracking-[0.75px]">
             2 Days Traffic Counts of Commercial Traffic Entering Delhi{" "}

@@ -37,7 +37,8 @@ const ProjectDetailsPage = () => {
           <Image
             src="/project-banner.webp"
             alt="Hero background"
-            className="object-cover w-full h-full"
+            fill
+            className="object-cover "
           />
         </div>
         <div className="absolute top-0 bottom-0 left-0 right-[57px] bg-black/10 z-10" />
@@ -63,7 +64,7 @@ const ProjectDetailsPage = () => {
       <div className=" py-8 md:px-16">
         <ProjectImpact />
       </div>
-      <ProjectsCarousel/>
+      <ProjectsCarousel />
     </div>
   );
 };

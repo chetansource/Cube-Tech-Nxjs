@@ -31,21 +31,22 @@ export default function Hero({
       className={`relative w-full bg-white md:mb-[97px] overflow-hidden ${height}`}
     >
       <div className="absolute top-0 bottom-0 left-0 right-0 md:right-[57px] z-0">
-        <Image
-          src={backgroundImage}
-          alt="Hero background"
-          fill
-          className="object-cover"
-          priority
-        />
+        <div className="relative h-full md:pr-[57px]">
+          <Image
+            src={backgroundImage}
+            alt="Hero background"
+            fill
+            className="object-cover"
+          />
+        </div>
       </div>
       <div
         className={`absolute top-0 bottom-0 left-0 right-0 md:right-[57px] ${overlayOpacity} z-10`}
       />
       <div className="flex relative z-20 container md:left-[57px]  px-4 pt-60 h-full flex-col  md:justify-center">
-        <div className="max-w-4xl">
+        <div className="max-w-5xl">
           {pathname !== "/resources" && (
-            <h1 className="text-white text-[52px] md:text-[75px]   font-light mb-12 leading-[40px] flex flex-col  md:gap-16 ">
+            <h1 className="text-white text-[52px] md:text-[75px]   font-light mb-12 leading-[40px] flex flex-col   md:gap-8 ">
               {title}
             </h1>
           )}
@@ -66,12 +67,14 @@ export default function Hero({
         {showTopSection && (
           <div className="absolute left-0 bottom-0 p-4 md:p-8 grid md:grid-cols-3 gap-4 ">
             {/* First Blurred Container */}
-            <div className="relative bg-white/5 backdrop-blur-sm rounded-lg p-4 md:w-[347px] md:h-[247px]">
-              <Image
-                src="/long-highway-2.webp"
-                alt="Placeholder"
-                className="w-[200px] h-[100px] md:w-[347px] md:h-[181px] object-cover flex-shrink-0 "
-              />
+            <div className="relative bg-white/5 backdrop-blur-sm rounded-lg p-4 ">
+              <div className="relative w-[200px] h-[100px] md:w-full md:h-[181px]">
+                <Image
+                  src="/long-highway-2.webp"
+                  alt="Placeholder"
+                  fill
+                />
+              </div>
               <div className="flex flex-row items-start justify-between w-full mt-2">
                 <div className="text-[18px] font-normal text-white leading-[22px] md:leading-[28px] tracking-[1px] md:tracking-[0.75px] w-[170px] md:w-[323px] max-w-full ">
                   CubeHighways Sets a New Record in Highway Construction
@@ -81,12 +84,15 @@ export default function Hero({
             </div>
 
             {/* Second Blurred Container */}
-            <div className="relative bg-white/5 backdrop-blur-sm rounded-lg p-4 md:w-[347px] md:h-[247px]">
-              <Image
-                src="/long-highway-2.webp"
-                alt="Placeholder"
-                className="w-[200px] h-[100px] md:w-[347px] md:h-[181px] object-cover flex-shrink-0 sm:w-full sm:h-auto"
-              />
+            <div className="relative bg-white/5 backdrop-blur-sm rounded-lg p-4 ">
+              <div className="relative w-[200px] h-[100px] md:w-full md:h-[181px]">
+                <Image
+                  src="/long-highway-2.webp"
+                  alt="Placeholder"
+                  fill
+                  priority
+                />
+              </div>
               <div className="flex flex-row items-start justify-between w-full mt-2">
                 <div className="text-[18px] font-normal text-white leading-[22px] md:leading-[28px] tracking-[1px] md:tracking-[0.75px] w-[170px] md:w-[323px] max-w-full ">
                   CubeHighways Sets a New Record in Highway Construction

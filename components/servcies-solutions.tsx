@@ -127,11 +127,14 @@ export default function ServicesSolutions() {
                         >
                           {/* First container */}
                           <div className=" bg-white/5 backdrop-blur-sm rounded-lg p-4 min-w-[347px] h-[247px]">
-                            <Image
-                              src="/long-highway-2.webp"
-                              alt="Placeholder"
-                              className=" w-[347px] h-[181px] object-cover flex-shrink-0 sm:w-full sm:h-auto"
-                            />
+                            <div className="w-[347px] h-[181px] sm:w-full sm:h-auto">
+                              <Image
+                                src="/long-highway-2.webp"
+                                alt="Placeholder"
+                                fill
+                                className="  object-cover flex-shrink-0 "
+                              />
+                            </div>
                             <div className="flex flex-row items-start justify-between w-full mt-2">
                               <h3 className="text-[16px] font-normal text-black  leading-[27x] tracking-[0.75px] w-[323px] max-w-full sm:w-full">
                                 CubeHighways Sets a New Record in Highway
@@ -142,11 +145,14 @@ export default function ServicesSolutions() {
 
                           {/* Second container */}
                           <div className=" bg-white/5 backdrop-blur-sm rounded-lg p-4 min-w-[347px] h-[247px]">
-                            <Image
-                              src="/long-highway-2.webp"
-                              alt="Placeholder"
-                              className=" w-[347px] h-[181px] object-cover flex-shrink-0 sm:w-full sm:h-auto"
-                            />
+                            <div className="w-[347px] h-[181px] sm:w-full sm:h-auto">
+                              <Image
+                                src="/long-highway-2.webp"
+                                alt="Placeholder"
+                                fill
+                                className="object-cover flex-shrink-0 "
+                              />
+                            </div>
                             <div className="flex flex-row items-start justify-between w-full mt-2">
                               <h3 className="text-[16px] font-normal text-black  leading-[27x] tracking-[0.75px] w-[323px] max-w-full sm:w-full">
                                 CubeHighways Sets a New Record in Highway
@@ -157,11 +163,14 @@ export default function ServicesSolutions() {
 
                           {/* Additional containers for scrolling demonstration */}
                           <div className=" bg-white/5 backdrop-blur-sm rounded-lg p-4 min-w-[347px] h-[247px]">
-                            <Image
-                              src="/long-highway-2.webp"
-                              alt="Placeholder"
-                              className=" w-[347px] h-[181px] object-cover flex-shrink-0 sm:w-full sm:h-auto"
-                            />
+                            <div className="w-[347px] h-[181px] sm:w-full sm:h-auto">
+                              <Image
+                                src="/long-highway-2.webp"
+                                alt="Placeholder"
+                                fill
+                                className="  object-cover flex-shrink-0 "
+                              />
+                            </div>
                             <div className="flex flex-row items-start justify-between w-full mt-2">
                               <h3 className="text-[16px] font-normal text-black  leading-[27x] tracking-[0.75px] w-[323px] max-w-full sm:w-full">
                                 CubeHighways Sets a New Record in Highway

@@ -22,11 +22,14 @@ const AwardItem: React.FC<AwardProps> = ({ logo, name, date, description }) => {
     <div className="flex flex-col min-w-[300px] mx-20">
       <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
         <div className="absolute inset-0">
-          <Image
-            src="/awards-image.webp"
-            alt="Logo"
-            className="w-full h-full object-contain"
-          />
+          <div className="w-full h-full ">
+            <Image
+              src="/awards-image.webp"
+              alt="Logo"
+              fill
+              className="object-contain"
+            />
+          </div>
         </div>
         <span className="text-xs font-medium">{logo}</span>
       </div>
@@ -78,11 +81,14 @@ const Awards = () => {
   return (
     <section className=" bg-white relative overflow-hidden pb-[300px]">
       <div className=" md:py-8 md:p-12 relative">
-        <Image
-          src="/Accolades & Recognition.svg"
-          alt="Footer Icon1"
-          className="absolute w-[90%] md:w-[80%] h-full object-contain pl-4   md:pl-[39px] md:pr-[170px] md:text-[181px]"
-        />
+        <div className="absolute w-[90%] md:w-[80%] h-full ">
+          <Image
+            src="/Accolades & Recognition.svg"
+            alt="Footer Icon1"
+            fill
+            className="object-contain pl-4  md:pl-[39px] md:pr-[170px] md:text-[181px]"
+          />
+        </div>
 
         {/* Carousel container */}
         <div

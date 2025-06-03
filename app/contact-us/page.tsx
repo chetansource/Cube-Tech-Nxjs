@@ -17,15 +17,15 @@ const ContactUsPage = () => {
   return (
     <section className="min-h-screen">
       <div
-        className="relative flex justify-start items-center w-full h-screen  bg-cover "
+        className="relative flex justify-start items-center w-full h-100vh  bg-cover "
         style={{ backgroundImage: "url('/contact-us-banner.webp')" }}
       >
         <Header />
         {/* Contact Form Container */}
-        <div className="container mx-auto flex-1 flex items-center mt-66 ">
+        <div className="container mx-auto flex-1 flex items-center mt-80 ">
           <div className="bg-white w-full  mx-auto p-12 flex ">
             {/* Left side - Contact Info */}
-            <div className="w-full pr-[204px]">
+            <div className="w-full pr-[100px]">
               <h1 className="text-[75px] font-light  leading-[112px]">
                 LET&#39;S GET IN
               </h1>

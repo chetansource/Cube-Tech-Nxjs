@@ -96,27 +96,31 @@ export default function Stats({ bannerImage }: { bannerImage?: string }) {
   return (
     <div
       className={`${
-        bannerImage ? " relative pb-[400px]" : "reative pb-[66px]"
+        bannerImage ? " relative pb-[100px]" : "reative pb-[66px]"
       } `}
     >
       {bannerImage && (
-        <div className="pl-4 md:pl-[37px] md:pr-[171px] md:text-[181px]">
+        <div className="absolute top-0 left-10 md:w-[70%] h-[400px] -z-10 ">
           <Image
-            className="object-cover w-[90%] md:w-[80%]"
+            className=""
             src={bannerImage}
             alt="Card Image"
+            fill
+            priority
           />
+          {/* <div className="pl-4 md:pl-[37px] md:pr-[171px] md:text-[181px] absolute inset-0 flex items-center">
+            <div className="w-[70%] md:w-[80%] text-white font-bold">
+            </div>
+          </div> */}
         </div>
       )}
 
       <div
         ref={sectionRef}
-        className={`${
-          bannerImage ? "absolute md:top-60 bottom-0" : "relative"
-        } py-12 bg-transparent text-foreground`}
+        className={`relative z-10 py-12  bg-transparent text-foreground`}
       >
         <div className=" mx-auto px-4">
-          <div className=" grid grid-cols-4 md:gap-[90px]">
+          <div className=" grid grid-cols-4 md:gap-[90px] mt-[16%] ">
             {metrics.map((metric, index) => (
               <div
                 key={index}

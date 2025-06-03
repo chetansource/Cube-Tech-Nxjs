@@ -14,13 +14,11 @@ const ResourceDevelopment = () => {
       <div className="absolute top-0 right-0 p-2 py-18 md:p-8 grid md:grid-cols-2 gap-4 md:gap-8">
         {/* First Blurred Container */}
         <div className="relative bg-white/5 backdrop-blur-sm rounded-lg p-4 ">
-          <Image
-            src="/long-highway-2.webp"
-            alt="Placeholder"
-            className=" w-[200px] h-[100px] md:w-[347px] md:h-[181px] object-cover flex-shrink-0 "
-          />
+          <div className="relative w-[200px] h-[100px] md:w-full md:h-[181px]">
+            <Image src="/long-highway-2.webp" alt="Placeholder" fill priority />
+          </div>
           <div className="flex flex-row items-start justify-between w-full mt-2">
-            <div className="text-sm md:text-[18px] font-normal text-white leading-[22px] md:leading-[28px] tracking-[1px] md:tracking-[0.75px] w-[170px] md:w-[323px] max-w-full ">
+            <div className="text-lg font-normal text-white leading-[22px] md:leading-[28px] tracking-[1px] md:tracking-[0.75px] w-[170px] md:w-[323px] max-w-full ">
               CubeHighways Sets a New Record in Highway Construction
             </div>
             <RightArrowIcon color={"#5FBA51"} />
@@ -28,17 +26,15 @@ const ResourceDevelopment = () => {
         </div>
 
         {/* Second Blurred Container */}
-        <div className="relative bg-white/5 backdrop-blur-sm rounded-lg p-4   ">
-          <Image
-            src="/long-highway-2.webp"
-            alt="Placeholder"
-            className="w-[200px] h-[100px] md:w-[347px] md:h-[181px] object-cover flex-shrink-0 "
-          />
-          <div className="flex flex-row items-start justify-between w-full mt-2 ">
-            <h3 className="text-sm md:text-[18px] font-normal text-white leading-[22px] md:leading-[28px] tracking-[1px] md:tracking-[0.75px] w-[170px] md:w-[323px] max-w-full ">
+        <div className="relative bg-white/5 backdrop-blur-sm rounded-lg p-4 ">
+          <div className="relative w-[200px] h-[100px] md:w-full md:h-[181px]">
+            <Image src="/long-highway-2.webp" alt="Placeholder" fill priority />
+          </div>
+          <div className="flex flex-row items-start justify-between w-full mt-2">
+            <div className="text-lg font-normal text-white leading-[22px] md:leading-[28px] tracking-[1px] md:tracking-[0.75px] w-[170px] md:w-[323px] max-w-full ">
               CubeHighways Sets a New Record in Highway Construction
-            </h3>
-            <ArrowRight color={"#5FBA51"} />
+            </div>
+            <RightArrowIcon color={"#5FBA51"} />
           </div>
         </div>
       </div>

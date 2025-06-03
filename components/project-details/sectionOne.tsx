@@ -67,11 +67,12 @@ export const SectionOne: React.FC<ParkingStudyProps> = ({
           </div>
 
           {/* Main image with thumbnails */}
-          <div className="relative">
+          <div className="relative w-full h-80">
             <Image
               src={mainImage}
               alt="Aerial view of highway"
-              className="w-full h-80 object-cover rounded-sm"
+              fill
+              className=" object-cover rounded-sm"
             />
             {/* <div className="absolute top-4 right-4 bg-white/80 p-2 rounded-sm flex gap-2">
               {thumbnails.map((thumb, index) => (

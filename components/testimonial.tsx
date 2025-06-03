@@ -82,7 +82,7 @@ export function Testimonial() {
 
   return (
     <div className=" w-full  px-4 md:px-8 lg:px-12 pb-20 md:pb-[184px]">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-8xl md:mr-[20%]">
         {/* Header with navigation arrows */}
         <div className="flex justify-between items-center mb-12 md:w-[70%] md:mx-auto">
           <h2 className="text-2xl flex  md:text-4xl font-light leading-[67px] tracking-[3.75px] uppercase">

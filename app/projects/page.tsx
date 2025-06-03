@@ -61,13 +61,14 @@ const ProjectsPage = () => {
           <Image
             src="/project-banner.webp"
             alt="Hero background"
-            className="object-cover w-full h-full"
+            className="object-cover "
+            fill
           />
         </div>
         <div className="absolute top-0 bottom-0 left-0 md:right-[57px] bg-black/10 z-10" />
         <div className="relative z-20 container md:left-[57px] px-4 md:pt-60 h-full flex flex-col justify-center">
           <div className="max-w-4xl mt-4">
-            <h1 className="text-white text-[52px] md:text-[75px]   font-light mb-12 leading-[40px] flex md:flex-col  md:gap-16">
+            <h1 className="text-white text-[52px] md:text-[75px]   font-light mb-12 leading-[40px] flex ">
               Our <span className="italic pl-4">Projects</span>
             </h1>
           </div>

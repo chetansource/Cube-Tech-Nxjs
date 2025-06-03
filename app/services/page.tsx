@@ -16,19 +16,24 @@ const Services = () => {
       <Hero
         backgroundImage="/cross-road-beautiful-mount-services-banner.webp"
         title={
-          <>
+          <div className="flex gap-8">
             Our{" "}
-            <span className="text-white font-semibold italic pt-5 md:pt-0">Services</span>
-          </>
+            <span className="text-white font-semibold italic pt-5 md:pt-0">
+              Services
+            </span>
+          </div>
         }
       />
       {/* services offered section */}
       <section className="w-full relative overflow-hidden">
-        <Image
-          src="/Explore-Our-Services.svg"
-          alt="Explore Our Services"
-          className="md:w-7xl h-[45vh] md:h-[50vh] ml-4 md:ml-[60px] md:mr-[170px]"
-        />
+        <div className="md:w-7xl h-[45vh] md:h-[50vh]">
+          <Image
+            src="/Explore-Our-Services.svg"
+            alt="Explore Our Services"
+            fill
+            className=" ml-4 md:ml-[60px] md:mr-[170px]"
+          />
+        </div>
         <div className="relative -top-[90px]">
           <ServiceSection />
         </div>

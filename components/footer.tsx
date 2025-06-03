@@ -279,15 +279,20 @@ export default function Footer() {
           <Image
             src="/Group-Footer.svg"
             alt="Footer Icon1"
+            width={347}
+            height={181}
             className="w-full h-full object-contain"
           />
         </div>
-        <div className="px-1 py-8 md:p-12">
-          <Image
-            src="/Group-Footer2.svg"
-            alt="Footer Icon2"
-            className="w-[90%] h-full object-contain"
-          />
+        <div className="px-1 py-8 md:p-4 md:px-12">
+          <div className="relative w-[90%] aspect-42/6">
+            <Image
+              src="/Group-Footer2.svg"
+              alt="Footer Icon2"
+              fill
+              className="object-contain"
+            />
+          </div>
         </div>
         <div className="relative flex flex-col md:absolute md:bottom-[68px] md:right-[68px]  md:flex-row  md:gap-6 md:text-right  text-base font-normal leading-[67px]">
           <span
