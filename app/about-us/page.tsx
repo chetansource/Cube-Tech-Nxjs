@@ -49,7 +49,7 @@ const AboutUsPage = () => {
             </h2>
             <p className="md:w-[70%] text-sm mb-8 leading-[20px] text-[#404040]">
               We provide strong and dependable leadership to drive success and
-              innovation within your organization. Whether it's strategic
+              innovation within your organization. Whether it&#39;s strategic
               planning, team management, or decision-making, our experienced
               leaders offer guidance and solutions that foster growth, enhance
               efficiency, and ensure long-term stability.

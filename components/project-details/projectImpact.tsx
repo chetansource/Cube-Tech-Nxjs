@@ -76,6 +76,7 @@ export function ProjectImpact() {
 
   const totalCards = cards.length;
   const visibleCards = 3;
+  console.log(currentIndex)
 
   // Auto-scroll for web view only
   useEffect(() => {
