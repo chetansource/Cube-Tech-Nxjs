@@ -123,16 +123,15 @@ export default function ServicesSolutions() {
                       <div className="relative">
                         <div
                           ref={scrollContainerRef}
-                          className="flex space-x-4 overflow-x-auto overflow-hide pb-4"
+                          className="flex space-x-4 overflow-x-auto overflow-hide pb-4 hide-scrollbar"
                         >
                           {/* First container */}
                           <div className=" bg-white/5 backdrop-blur-sm rounded-lg p-4 min-w-[347px] h-[247px]">
-                            <div className="w-[347px] h-[181px] sm:w-full sm:h-auto">
+                            <div className="relative h-full w-full">
                               <Image
                                 src="/long-highway-2.webp"
                                 alt="Placeholder"
                                 fill
-                                className="  object-cover flex-shrink-0 "
                               />
                             </div>
                             <div className="flex flex-row items-start justify-between w-full mt-2">
@@ -145,12 +144,11 @@ export default function ServicesSolutions() {
 
                           {/* Second container */}
                           <div className=" bg-white/5 backdrop-blur-sm rounded-lg p-4 min-w-[347px] h-[247px]">
-                            <div className="w-[347px] h-[181px] sm:w-full sm:h-auto">
+                            <div className="relative h-full w-full">
                               <Image
                                 src="/long-highway-2.webp"
                                 alt="Placeholder"
                                 fill
-                                className="object-cover flex-shrink-0 "
                               />
                             </div>
                             <div className="flex flex-row items-start justify-between w-full mt-2">
@@ -163,12 +161,11 @@ export default function ServicesSolutions() {
 
                           {/* Additional containers for scrolling demonstration */}
                           <div className=" bg-white/5 backdrop-blur-sm rounded-lg p-4 min-w-[347px] h-[247px]">
-                            <div className="w-[347px] h-[181px] sm:w-full sm:h-auto">
+                            <div className="relative h-full w-full">
                               <Image
                                 src="/long-highway-2.webp"
                                 alt="Placeholder"
                                 fill
-                                className="  object-cover flex-shrink-0 "
                               />
                             </div>
                             <div className="flex flex-row items-start justify-between w-full mt-2">

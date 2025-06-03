@@ -89,13 +89,13 @@ export default function ProjectsCarousel() {
   }, [currentIndex]);
 
   return (
-    <div className="w-full px-16 mb-27">
-      <div className="flex justify-between items-center mb-12 ">
-        <h2 className="text-[46px] text-black/60 md:eading-[64px] md:tracking-[3.75px] uppercase">
-          EXPLORE MORE{" "}
+    <div className="w-full px-4 md:px-16 mb-27">
+      <div className="flex justify-between items-center mb-8 md:mb-12">
+        <h2 className="text-2xl md:text-[46px] text-black/60 md:eading-[64px] md:tracking-[3.75px] uppercase">
+          EXPLORE MORE <br className="block md:hidden" />
           <span className="text-accent italic font-semibold">PROJECTS</span>
         </h2>
-        <div className="flex gap-4">
+        <div className="hidden md:flex gap-4">
           <button
             onClick={goToPrevious}
             className={cn(
@@ -125,7 +125,8 @@ export default function ProjectsCarousel() {
         </div>
       </div>
 
-      <div className="relative overflow-hidden">
+      {/* Desktop View */}
+      <div className="relative overflow-hidden hidden md:block">
         <div
           ref={containerRef}
           className="flex transition-transform duration-500 ease-in-out"
@@ -138,14 +139,35 @@ export default function ProjectsCarousel() {
           ))}
         </div>
       </div>
+
+      {/* Mobile View */}
+      <div className="block md:hidden space-y-6">
+        {[0, 1].map((rowIndex) => (
+          <div
+            key={rowIndex}
+            className="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide px-1"
+          >
+            {projects
+              .filter((_, idx) => idx % 2 === rowIndex)
+              .map((project) => (
+                <div
+                  key={project.id}
+                  className="snap-start flex-shrink-0 w-[90%]"
+                >
+                  <ProjectCard project={project} />
+                </div>
+              ))}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="flex flex-col h-full">
-      <div className="relative h-96 w-full mb-6 overflow-hidden">
+    <div className="flex flex-col h-full bg-white  shadow-sm">
+      <div className="relative h-64 w-full mb-4 overflow-hidden ">
         <div className="absolute inset-0 bg-black/20 z-10"></div>
         <Image
           src={project.image || "/placeholder.svg"}
@@ -153,31 +175,33 @@ function ProjectCard({ project }: { project: Project }) {
           fill
           className="object-cover"
         />
-        <h3 className="absolute top-8 left-8 text-3xl font-light text-white z-20">
+        <h3 className="absolute top-4 left-4 text-xl font-light text-white z-20">
           {project.title}
         </h3>
       </div>
 
-      <h4 className="md:leading-[35px] md:tracking-[0.75px] text-2xl  text-black mb-4">
-        {project.heading}
-      </h4>
+      <div className="px-4 pb-4 flex flex-col flex-1">
+        <h4 className="leading-snug text-base md:text-xl text-black mb-3">
+          {project.heading}
+        </h4>
 
-      <div className="flex justify-between mb-6">
-        <p className="text-black/60 text-lg pr-8 max-w-[80%]">
-          {project.description}
-        </p>
-        <RightArrowIcon color="#5FBA51" />
-      </div>
+        <div className="flex justify-between mb-4">
+          <p className="text-black/60 text-sm md:text-base pr-4">
+            {project.description}
+          </p>
+          <RightArrowIcon color="#5FBA51" />
+        </div>
 
-      <div className="mt-auto flex flex-wrap gap-2">
-        {project.tags.map((tag, index) => (
-          <span
-            key={index}
-            className="px-4 py-1 border-b border-accent text-lg text-black/60 md:leading-[24px] md:tracking-[0.25px]"
-          >
-            {tag}
-          </span>
-        ))}
+        <div className="mt-auto flex  gap-2">
+          {project.tags.map((tag, index) => (
+            <span
+              key={index}
+              className="px-3 py-1 border-b border-accent text-sm text-black/60"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );

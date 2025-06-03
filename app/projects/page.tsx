@@ -57,12 +57,12 @@ const ProjectsPage = () => {
       <Header />
       {/* hero section start */}
       <section className="relative w-full bg-white mb-[97px] overflow-hidden h-[527px]">
-        <div className="absolute top-0 bottom-0 left-0 md:right-[57px] z-0">
+        <div className="absolute w-full  h-full md:w-[97%] top-0 bottom-0 left-0 md:right-[57px] z-0">
           <Image
             src="/project-banner.webp"
             alt="Hero background"
-            className="object-cover "
             fill
+            className="object-cover"
           />
         </div>
         <div className="absolute top-0 bottom-0 left-0 md:right-[57px] bg-black/10 z-10" />

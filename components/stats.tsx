@@ -96,11 +96,11 @@ export default function Stats({ bannerImage }: { bannerImage?: string }) {
   return (
     <div
       className={`${
-        bannerImage ? " relative pb-[100px]" : "reative pb-[66px]"
+        bannerImage ? " relative pb-[100px]" : "reative pb-[106px]"
       } `}
     >
       {bannerImage && (
-        <div className="absolute top-0 left-10 md:w-[70%] h-[400px] -z-10 ">
+        <div className="relative mx-8 md:mx-0 h-[100px] md:absolute md:top-0 md:left-10 w-[70%] md:h-[400px] -z-10">
           <Image
             className=""
             src={bannerImage}
@@ -120,29 +120,31 @@ export default function Stats({ bannerImage }: { bannerImage?: string }) {
         className={`relative z-10 py-12  bg-transparent text-foreground`}
       >
         <div className=" mx-auto px-4">
-          <div className=" grid grid-cols-4 md:gap-[90px] mt-[16%] ">
-            {metrics.map((metric, index) => (
-              <div
-                key={index}
-                className={`group flex p-4 flex-col items-start md:gap-[80px] flex-[1_0_0] self-stretch  duration-200 hover:bg-[#5FBA51] hover:text-white hover:cursor-pointer`}
-              >
-                <div className="text-4xl md:text-[122px] font-light flex items-start ">
-                  <AnimatedNumber number={metric.value} />
-                  {metric.hasIcon && (
-                    <PlusIcon className="w-5 md:w-8 h-8 md:h-16 ml-4 md:ml-8  text-[#5FBA51] group-hover:text-[#ffffff] transition-colors duration-300" />
-                  )}
-                  {/* {metric.hasIcon && (
+          <div className="mt-[16%]">
+            <div className="flex overflow-x-auto gap-8 md:grid md:grid-cols-4 md:gap-[90px] scroll-smooth px-2 -mx-2 hide-scrollbar">
+              {metrics.map((metric, index) => (
+                <div
+                  key={index}
+                  className={`min-w-[40%] max-w-[80%] md:min-w-0 md:max-w-none group flex p-4 flex-col items-start  md:gap-[80px] flex-shrink-0 md:flex-shrink md:flex-[1_0_0] self-stretch duration-200 hover:bg-[#5FBA51] hover:text-white hover:cursor-pointer`}
+                >
+                  <div className="text-4xl md:text-[122px] font-light flex items-start ">
+                    <AnimatedNumber number={metric.value} />
+                    {metric.hasIcon && (
+                      <PlusIcon className="w-5 md:w-8 h-8 md:h-16 ml-4 md:ml-8  text-[#5FBA51] group-hover:text-[#ffffff] transition-colors duration-300" />
+                    )}
+                    {/* {metric.hasIcon && (
                     <span>
                       <UpArrowIcon />
                     </span>
                   )} */}
+                  </div>
+                  <p className=" mb-20 md:mb-0 md:text-[24px] font-normal mt-2 flex-grow">
+                    {metric.label}
+                  </p>
+                  <div className="w-full h-[0.5px] bg-accent mt-4"></div>
                 </div>
-                <p className=" md:text-[24px] font-normal mt-2 flex-grow">
-                  {metric.label}
-                </p>
-                <div className="w-full h-[0.5px] bg-accent mt-4"></div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

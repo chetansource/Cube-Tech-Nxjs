@@ -16,7 +16,7 @@ const Services = () => {
       <Hero
         backgroundImage="/cross-road-beautiful-mount-services-banner.webp"
         title={
-          <div className="flex gap-8">
+          <div className="flex flex-col md:flex md:flex-row md:gap-8">
             Our{" "}
             <span className="text-white font-semibold italic pt-5 md:pt-0">
               Services

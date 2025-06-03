@@ -32,8 +32,8 @@ export const SectionOne: React.FC<ParkingStudyProps> = ({
     <div className="max-w-8xl mx-auto p-4 mb-43 ">
       <div className="grid grid-cols-1 md:grid-cols-2 md:px-16">
         {/* Left side - Title */}
-        <div className="pt-8 md:w-[50%]">
-          <h1 className="text-4xl md:text-[46px]  text-black/60 uppercase md:leading-[64px] md:tracking-[3.75px] ">
+        <div className="pt-8 md:w-[50%] py-8 md:py-0">
+          <h1 className="text-2xl md:text-4xl md:text-[46px]  text-black/60 uppercase md:leading-[64px] md:tracking-[3.75px] ">
             {title}{" "}
             <span className="block md:inline">
               <span className="">G.K-I</span>{" "}
@@ -45,22 +45,22 @@ export const SectionOne: React.FC<ParkingStudyProps> = ({
         </div>
 
         {/* Right side - Content */}
-        <div className="space-y-6">
+        <div className="space-y-12 md:space-y-6 ">
           {/* Project details */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-4">
             <div>
-              <div className="md:leading-[55px] md:tracking-[0.75px] text-lg">
+              <div className="md:leading-[55px] md:tracking-[0.75px] text-base md:text-lg">
                 Project Name
               </div>
-              <div className="md:leading-[54px] md:tracking-[0.25px] text-base">
+              <div className="md:leading-[54px] md:tracking-[0.25px] text-sm md:text-base text-black/60">
                 {projectName}
               </div>
             </div>
             <div>
-              <div className="md:leading-[54px] md:tracking-[0.25px] text-lg">
+              <div className="md:leading-[54px] md:tracking-[0.25px] text-base md:text-lg ">
                 {studyType}
               </div>
-              <div className="md:leading-[54px] md:tracking-[0.25px] text-base">
+              <div className="md:leading-[54px] md:tracking-[0.25px] text-sm md:text-base text-black/60">
                 {date}
               </div>
             </div>
@@ -103,9 +103,9 @@ export const SectionOne: React.FC<ParkingStudyProps> = ({
               {expanded ? "View less" : "View more"}
               <UpArrowIcon
                 color="#5FBA51"
-                className={`ml-2 transition-transform duration-400 ${
-                  expanded ? "rotate-180" : ""
-                }`}
+                className={`ml-2 transition-transform duration-400
+                ${expanded ? "rotate-0 " : "rotate-180 "}
+              `}
               />
             </button>
           </div>

@@ -101,13 +101,13 @@ export function ExploreMoreProjectsSection() {
   ];
 
   return (
-    <section className="py-16 px-4 md:px-[61px] ">
+    <section className="py-16 px-4 md:px-[61px]">
       <div className="mb-12 tracking-[3.75px] uppercase text-2xl md:text-[46px]">
         <h2 className=" font-light ">EXPLORE MORE</h2>
         <h3 className=" font-semibold text-accent italic">PROJECTS</h3>
       </div>
 
-      <div className="flex md:grid overflow-x-auto md:overflow-visible gap-[42px] md:grid-cols-2 snap-x snap-mandatory scroll-smooth">
+      <div className="flex md:grid overflow-x-auto md:overflow-visible gap-[42px] md:grid-cols-2 snap-x snap-mandatory scroll-smooth hide-scrollbar ">
         {projects.slice(0, 6).map((project) => (
           <div
             key={project.id}

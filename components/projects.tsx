@@ -43,11 +43,11 @@ const Projects = () => {
   return (
     <section
       id="project-scroll-container"
-      className="group md:flex md:px-[63px] pb-[130px] pl-4 overflow-x-auto md:overflow-visible cursor-grab active:cursor-grabbing select-none"
+      className="group md:flex md:px-[63px] pb-[130px] pl-4 overflow-x-auto md:overflow-visible cursor-grab active:cursor-grabbing select-none hide-scrollbar"
     >
       <div
         id="project-scroll-inner"
-        className="flex md:grid md:grid-cols-2 md:gap-8 flex-nowrap w-max md:w-full"
+        className="flex md:grid md:grid-cols-2 gap-4 md:gap-8 flex-nowrap w-max md:w-full"
       >
         <div className="container w-[85vw] md:w-full">
           <div className="relative w-full h-[392px]">

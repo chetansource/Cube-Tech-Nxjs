@@ -68,7 +68,7 @@ export default function KeyProjectsSection({
   }, [isInView]);
 
   return (
-    <section ref={sectionRef} className={`w-full bg-white py-16 ${className}`}>
+    <section ref={sectionRef} className={`w-full bg-white md:py-16 ${className}`}>
       <div className="">
         {/* Section Header */}
         <div className="hidden md:block mb-12 pl-[61px]">

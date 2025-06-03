@@ -74,20 +74,19 @@ export default function ProjectMap() {
       {/* Background Map */}
 
       <div className="absolute inset-0 bg-[#212121] bg-cover bg-no-repeat  ">
-        <div className="h-full w-full">
+        <div className="relative h-full w-full md:top-0 md:left-80 ">
           <Image
             src="/highly-detailed-map.svg"
             alt="India Map Background"
             fill
-            className=" object-contain absolute top-0 md:left-80"
           />
         </div>
 
         {/* Map outline overlay - in a real implementation, you'd use an SVG of India */}
-        <div className="absolute inset-0 flex items-center md:justify-center md:left-70">
+        <div className="absolute inset-0 flex items-center md:justify-center md:left-60">
           <svg
             viewBox="0 0 100 100"
-            className="w-[65%] md:w-[80%] h-[60%] md:h-[80%]"
+            className="w-[65%] md:w-[80%] h-[60%] md:h-[70%]"
           >
             {/* This would be replaced with actual SVG path data for India */}
             <path
@@ -161,19 +160,13 @@ export default function ProjectMap() {
 
       {/* Project Detail Popup */}
       {activeProject && (
-        <div
-          className="absolute z-20 bg-black/30 backdrop-blur-sm p-2 md:p-6 border border-primary/20 transition-all duration-300 w-[200px] md:w-[347px] "
-          style={{
-            top: `${activeProject.position.y}%`,
-            left: `${activeProject.position.x}%`,
-            transform: "translate(-70%, -10%)",
-          }}
-        >
-          <div className=" overflow-hidden mb-4 bg-black/30">
+        <div className="absolute right-5 md:right-20 top-24 md:top-28 z-50 bg-black/30 backdrop-blur-sm p-4 md:p-6 border border-primary/20 transition-all duration-300 w-[60vw] md:w-[347px] ">
+          <div className="relative w-full h-[120px] md:h-[181px] mb-4 bg-black/30">
             <Image
               src={activeProject.image ?? "/placeholder.jpg"}
               alt={activeProject.name ?? "Project image"}
-              className="md:w-[347px] md:h-[181px] object-cover flex-shrink-0"
+              fill
+              className="object-cover"
             />
           </div>
           <div className="flex flex-row items-start justify-between w-full mt-2">
