@@ -92,7 +92,7 @@ export default function Timeline() {
 
   return (
     <section className="py-16 px-4 md:px-32 max-w-8xl mx-auto">
-      <h1 className="text-[46px] font-light tracking-widest text-center pb-[53px]">
+      <h1 className="text-2xl md:text-[46px] font-light tracking-widest text-center pb-[53px]">
         Our <span className="font-semibold text-accent italic"> Story</span>
       </h1>
       <div className="relative">
@@ -115,11 +115,11 @@ export default function Timeline() {
                 }`}
               >
                 {item.title && (
-                  <h3 className="text-[#AFB1B6]  font-base text-sm mb-2">
+                  <h3 className="text-[#AFB1B6]  font-base text-sm md:text-base mb-2">
                     {item.title}
                   </h3>
                 )}
-                <p className="text-gray-700">{item.content}</p>
+                <p className="text-gray-700 text-sm md:text-lg">{item.content}</p>
               </div>
 
               {/* Timeline node */}

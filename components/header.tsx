@@ -48,45 +48,52 @@ export default function Header() {
               <div className="space-y-0">
                 <Link
                   href="/"
-                  className="block py-4 text-white text-lg border-b border-gray-600 hover:text-green-400 transition-colors duration-300"
+                  className="block py-4 text-white text-lg border-b border-gray-600 hover:text-accent transition-colors duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Home
                 </Link>
                 <Link
                   href="/services"
-                  className="block py-4 text-white text-lg border-b border-gray-600 hover:text-green-400 transition-colors duration-300"
+                  className="block py-4 text-white text-lg border-b border-gray-600 hover:text-accent transition-colors duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Services
                 </Link>
                 <Link
                   href="/projects"
-                  className="block py-4 text-white text-lg border-b border-gray-600 hover:text-green-400 transition-colors duration-300"
+                  className="block py-4 text-white text-lg border-b border-gray-600 hover:text-accent transition-colors duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Projects
                 </Link>
                 <Link
                   href="/about-us"
-                  className="block py-4 text-white text-lg border-b border-gray-600 hover:text-green-400 transition-colors duration-300"
+                  className="block py-4 text-white text-lg border-b border-gray-600 hover:text-accent transition-colors duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   About Us
                 </Link>
                 <Link
                   href="/resources"
-                  className="block py-4 text-white text-lg border-b border-gray-600 hover:text-green-400 transition-colors duration-300"
+                  className="block py-4 text-white text-lg border-b border-gray-600 hover:text-accent transition-colors duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Knowledge Center
                 </Link>
                 <Link
-                  href="/career"
-                  className="block py-4 text-white text-lg border-b border-gray-600 hover:text-green-400 transition-colors duration-300"
+                  href="/careers"
+                  className="block py-4 text-white text-lg border-b border-gray-600 hover:text-accent transition-colors duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Career
+                  Careers
+                </Link>
+                <Link
+                  href="/contact-us"
+                  className="block py-4 text-white text-lg border-b border-gray-600 hover:text-accent transition-colors duration-300"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Contact US
                 </Link>
               </div>
             </nav>
@@ -109,25 +116,25 @@ export default function Header() {
                   href="#"
                   className="text-white hover:text-green-400 transition-colors"
                 >
-                  <Youtube/>
+                  <Youtube />
                 </Link>
                 <Link
                   href="#"
                   className="text-white hover:text-green-400 transition-colors"
                 >
-                  <Facebook/>
+                  <Facebook />
                 </Link>
                 <Link
                   href="#"
                   className="text-white hover:text-green-400 transition-colors"
                 >
-                  <Insta/>
+                  <Insta />
                 </Link>
                 <Link
                   href="#"
                   className="text-white hover:text-green-400 transition-colors"
                 >
-                 <Pinterest/>
+                  <Pinterest />
                 </Link>
               </div>
             </div>

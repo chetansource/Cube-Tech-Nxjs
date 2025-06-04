@@ -5,7 +5,7 @@ import RightArrowIcon from "../icons/right-arrow";
 const CaseStudyGrid: React.FC = () => {
   return (
     <div className="container mx-auto p-4 mb-19">
-      <div className="grid grid-cols-3 gap-4 ">
+      <div className="hidden md:grid grid-cols-3 gap-4 ">
         {/* First row - 3 squares */}
         <div className="bg-white p-6 border border-gray-100 shadow-sm flex flex-col">
           <div className=" flex  flex-grow  text-base text-[#808080] font-medium mb-4 uppercase gap-4">
@@ -45,7 +45,7 @@ const CaseStudyGrid: React.FC = () => {
 
         <div className=" flex flex-col-reverse bg-[#02472F] p-6 text-white relative md:h-[339px]">
           <div className="">
-            <div className="flex text-base text-[#808080] font-medium mb-4 uppercase gap-4 text-white">
+            <div className="flex text-base text-[#808080] font-medium mb-4 uppercase gap-4 ">
               <span>/Podcaste</span>
               <RightArrowIcon color="#FFFFFF" />
             </div>
@@ -111,7 +111,7 @@ const CaseStudyGrid: React.FC = () => {
           />
 
           <div className="absolute inset-0 bg-gray/40 p-6 flex flex-col justify-end text-white">
-            <div className="flex text-base text-[#808080] font-medium mb-4 uppercase gap-4 text-white px-8">
+            <div className="flex text-base text-[#808080] font-medium mb-4 uppercase gap-4  px-8">
               <span>/Podcaste</span>
               <RightArrowIcon color="#FFFFFF" />
             </div>
@@ -158,7 +158,7 @@ const CaseStudyGrid: React.FC = () => {
         </div>
 
         <div className="bg-accent p-6  flex flex-col justify-end">
-          <div className="flex text-base text-[#808080] font-medium mb-4 uppercase gap-4 text-white">
+          <div className="flex text-base text-[#808080] font-medium mb-4 uppercase gap-4 ">
             <span>/Podcaste</span>
             <RightArrowIcon color="#FFFFFF" />
           </div>
@@ -166,6 +166,61 @@ const CaseStudyGrid: React.FC = () => {
             Our team thrives in a dynamic, collaborative environment where every
             project brings new challenges and opportunities to learn and grow
           </p>
+        </div>
+      </div>
+      {/* MOBILE ONLY: Horizontally scrollable 2-row layout */}
+      <div className="md:hidden overflow-x-auto hide-scrollbar">
+        <div
+          className="flex gap-x-4 px-4 py-6 min-w-max "
+          style={{
+            height: "700px", // Two rows of 320px + gap
+          }}
+        >
+          {/* Container for cards grouped in columns (2 cards stacked vertically) */}
+          {[...Array(5)].map((_, colIdx) => (
+            <div key={colIdx} className="flex flex-col gap-y-4">
+              {[...Array(2)].map((_, rowIdx) => {
+                const index = colIdx * 2 + rowIdx;
+                return (
+                  <div
+                    key={index}
+                    className="w-[220px] h-[320px] bg-[#FBFBFB] p-4 flex flex-col justify-between flex-shrink-0"
+                  >
+                    <div className="flex text-base text-[#808080] font-medium uppercase gap-2">
+                      <span>/Casestudy</span>
+                      <RightArrowIcon color="#5FBA51" />
+                    </div>
+                    <h3 className="text-md font-semibold leading-tight">
+                      Card {index + 1} Title Goes Here
+                    </h3>
+                    <p className="text-sm text-black/60">11/02/2025</p>
+                    <p className="text-sm text-black/60">
+                      Brief content describing the purpose or content of this
+                      card.
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          ))}
+        </div>
+        <div className=" md:hidden text-[#808080] text-base uppercase  flex gap-6 justify-end ">
+          SEE ALL
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M17.9117 17.3866L9.43543 17.7778M17.9117 17.3866L17.5205 8.91034M17.9117 17.3866L10.1527 10.3121M6.08846 6.60647L7.93584 8.29086"
+              stroke="#5FBA51"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
         </div>
       </div>
     </div>

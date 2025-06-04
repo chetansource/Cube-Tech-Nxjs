@@ -54,10 +54,16 @@ export default function ResumeUpload() {
         <h2 className="text-center text-3xl md:text-[40px] font-medium mb-12 md:leading-[83px] md:tracking-[3.75px] uppercase">
           {isDetailsPage ? (
             <>
-              <span className="text-black font-light"> APPLY </span>
-              <span className="text-accent font-semibold italic">
-                NOW!
-              </span>
+              <div className="hidden md:block">
+                <span className="text-black font-light"> APPLY </span>
+                <span className="text-accent font-semibold italic">NOW!</span>
+              </div>
+              <div className="block md:hidden">
+                <span className="text-black font-light">LEAVE YOUR </span>
+                <span className="text-accent font-semibold italic">
+                  RESUME WITH US!
+                </span>
+              </div>
             </>
           ) : (
             <>
@@ -70,64 +76,66 @@ export default function ResumeUpload() {
         </h2>
 
         <form onSubmit={handleSubmit}>
-          <div className="mb-6">
-            <input
-              type="text"
-              placeholder="Full Name"
-              className="w-full p-4 border border-[#EAEAEA] focus:outline-none placeholder:text-[#1C1B1F] placeholder:text-lg"
-              value={fullName}
-              onChange={(e) => setFullName(e.target.value)}
-              required
-            />
-          </div>
-
-          <div className="mb-6">
-            <input
-              type="tel"
-              placeholder="Contact No."
-              className="w-full p-4 border border-[#EAEAEA] focus:outline-none placeholder:text-[#1C1B1F] placeholder:text-lg"
-              value={contactNo}
-              onChange={(e) => setContactNo(e.target.value)}
-              required
-            />
-          </div>
-
-          <div
-            className={`mb-6 border border-gray-200 p-8 text-center cursor-pointer ${
-              isDragging ? "border-[#EAEAEA]" : "bg-white"
-            }`}
-            onDragOver={handleDragOver}
-            onDragLeave={handleDragLeave}
-            onDrop={handleDrop}
-            onClick={handleBrowseClick}
-          >
-            <div className="py-8">
-              <p className="text-lg font-medium mb-2 text-[#1C1B1F] ">
-                Upload Resume
-              </p>
-              <p className="text-xs text-[#1C1B1F] md:leading-[26px]">
-                Drag And Drop File Here Or{" "}
-                <span className="font-bold opacity-[0.8]">Browse File</span>
-              </p>
-              {file && (
-                <p className="mt-4 text-accent font-medium">{file.name}</p>
-              )}
+          <div className="w-[80%] mx-auto">
+            <div className="mb-6 ">
+              <input
+                type="text"
+                placeholder="Full Name"
+                className="w-full p-4 border border-[#EAEAEA] focus:outline-none placeholder:text-[#1C1B1F] placeholder:text-lg"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+                required
+              />
             </div>
-            <input
-              type="file"
-              ref={fileInputRef}
-              className="hidden"
-              accept=".pdf,.doc,.docx"
-              onChange={handleFileChange}
-            />
-          </div>
 
-          <button
-            type="submit"
-            className="w-full py-4 bg-accent text-white font-medium uppercase tracking-wide  transition-colors cursor-pointer"
-          >
-            SUBMIT
-          </button>
+            <div className="mb-6">
+              <input
+                type="tel"
+                placeholder="Contact No."
+                className="w-full p-4 border border-[#EAEAEA] focus:outline-none placeholder:text-[#1C1B1F] placeholder:text-lg"
+                value={contactNo}
+                onChange={(e) => setContactNo(e.target.value)}
+                required
+              />
+            </div>
+
+            <div
+              className={`mb-6 border border-gray-200 p-8 text-center cursor-pointer ${
+                isDragging ? "border-[#EAEAEA]" : "bg-white"
+              }`}
+              onDragOver={handleDragOver}
+              onDragLeave={handleDragLeave}
+              onDrop={handleDrop}
+              onClick={handleBrowseClick}
+            >
+              <div className="py-8">
+                <p className="text-lg font-medium mb-2 text-[#1C1B1F] ">
+                  Upload Resume
+                </p>
+                <p className="text-xs text-[#1C1B1F] md:leading-[26px]">
+                  Drag And Drop File Here Or{" "}
+                  <span className="font-bold opacity-[0.8]">Browse File</span>
+                </p>
+                {file && (
+                  <p className="mt-4 text-accent font-medium">{file.name}</p>
+                )}
+              </div>
+              <input
+                type="file"
+                ref={fileInputRef}
+                className="hidden"
+                accept=".pdf,.doc,.docx"
+                onChange={handleFileChange}
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="w-full py-4 bg-accent text-white font-medium uppercase tracking-wide  transition-colors cursor-pointer"
+            >
+              SUBMIT
+            </button>
+          </div>
         </form>
       </div>
     </section>

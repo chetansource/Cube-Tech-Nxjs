@@ -37,11 +37,11 @@ const jobListings: JobListing[] = [
 
 export default function CareerOpportunities() {
   return (
-    <div className="min-h-screen bg-white pb-18 px-16 ">
+    <div className="min-h-screen bg-white pb-18 px-4 md:px-16 ">
       <div className="max-w-8xl mx-auto flex flex-col md:flex-row gap-8">
         {/* Left Column - 35% */}
         <div className="md:w-[43%] space-y-6">
-          <h1 className="md:text-[32px] font-bold md:leading-[40px] md:tracking-[3.75px]">
+          <h1 className="text-2xl md:text-[32px] font-bold md:leading-[40px] md:tracking-[3.75px]">
             <span className="font-light text-black">CAREER </span>
             <span className=" font-medium text-accent italic">
               OPPORTUNITIES
@@ -81,11 +81,11 @@ export default function CareerOpportunities() {
                 </div>
               </div>
 
-              <p className="pl-[220px] text-base font-['Glacier_Indifference']  text-[#484848] mb-6 leading-[24px]">
+              <p className=" pl-[100px] md:pl-[220px] text-base font-['Glacier_Indifference']  text-[#484848] mb-6 leading-[24px]">
                 {job.description}
               </p>
 
-              <button className="ml-[220px] bg-accent hover:bg-green-600 text-white px-6 py-2 uppercase text-sm font-medium transition-colors">
+              <button className="ml-[100px] md:ml-[220px] bg-accent hover:bg-green-600 text-white p-2 md:px-6 md:py-2 uppercase text-sm font-medium transition-colors">
                 Apply Now
               </button>
             </div>

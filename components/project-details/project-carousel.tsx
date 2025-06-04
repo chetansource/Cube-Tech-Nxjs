@@ -26,7 +26,7 @@ const projects: Project[] = [
       "CubeTech conducted a 3-day traffic count on the Suratgarh-Sriganganagar section of NH15, analyzing vehicle flow for planning and optimization",
     tags: [
       "Sriganganagar",
-      "Uniquest Infra Ventures Private Limited",
+      "Uniquest Infra ",
       "Pre-bid - Traffic",
     ],
   },
@@ -89,7 +89,7 @@ export default function ProjectsCarousel() {
   }, [currentIndex]);
 
   return (
-    <div className="w-full px-4 md:px-16 mb-27">
+    <div className="w-full px-4 md:px-16 mb-27 ">
       <div className="flex justify-between items-center mb-8 md:mb-12">
         <h2 className="text-2xl md:text-[46px] text-black/60 md:eading-[64px] md:tracking-[3.75px] uppercase">
           EXPLORE MORE <br className="block md:hidden" />
@@ -145,14 +145,14 @@ export default function ProjectsCarousel() {
         {[0, 1].map((rowIndex) => (
           <div
             key={rowIndex}
-            className="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide px-1"
+            className="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide px-1 hide-scrollbar "
           >
             {projects
               .filter((_, idx) => idx % 2 === rowIndex)
               .map((project) => (
                 <div
                   key={project.id}
-                  className="snap-start flex-shrink-0 w-[90%]"
+                  className="snap-start flex-shrink-0 w-[90%] "
                 >
                   <ProjectCard project={project} />
                 </div>
@@ -166,7 +166,7 @@ export default function ProjectsCarousel() {
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="flex flex-col h-full bg-white  shadow-sm">
+    <div className="flex flex-col h-full bg-white  shadow-sm ">
       <div className="relative h-64 w-full mb-4 overflow-hidden ">
         <div className="absolute inset-0 bg-black/20 z-10"></div>
         <Image

@@ -14,25 +14,23 @@ const ResourcesPage = () => {
       <Hero
         backgroundImage="/top-view-bridge.webp"
         title={
-          <>
+          <div className="flex flex-row md:gap-8 my-8">
             Explore{" "}
-            <span className="text-white font-semibold italic">Latest</span>
-          </>
+            <span className="text-white font-semibold italic pl-4">Latest</span>
+          </div>
         }
       />
-      <InsightsImpact/>
+      <InsightsImpact />
       <ResourcesSection />
       {/* Resource Gallery start */}
       <div
-        className="relative h-screen w-full bg-no-repeat md:pb-[53px] "
+        className="relative h-[300px] md:h-[500px] w-full bg-no-repeat md:pb-[53px] bg-[20px_center] md:bg-[53px_center] bg-[length:70%] md:bg-[length:60%]"
         style={{
           backgroundImage: `url('/Resource Gallery.webp')`,
-          backgroundSize: "60%",
-          backgroundPosition: "53px center",
         }}
       >
-        <div className="absolute bottom-0 right-0 p-4 text-[#C3C3C3] text-xl leading-[10px] mr-8">
-          <ul className="flex space-x-12">
+        <div className="absolute bottom-0 right-0 p-4 text-[#C3C3C3] text-xs md:text-xl leading-[10px] mr-8">
+          <ul className="flex space-x-4 md:space-x-12">
             <li>
               <a href="#" className=" ">
                 News
@@ -55,10 +53,10 @@ const ResourcesPage = () => {
             </li>
           </ul>
         </div>
-        <div className="absolute bottom-0 left-[-50] w-full border border-accent"></div>
+        <div className="absolute bottom-0 md:left-[-50] w-full border border-accent"></div>
       </div>
       {/* Resource Gallery stop */}
-      <CaseStudiesGrid/>
+      <CaseStudiesGrid />
       <Awards />
       <Faq />
     </div>

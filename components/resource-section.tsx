@@ -201,7 +201,7 @@ export default function ResourcesSection() {
   ];
 
   return (
-    <section className="w-full mb-34">
+    <section className="w-full  md:mb-34">
       <div className="grid grid-cols-2 md:grid-cols-3">
         {/* Left panel with background image and heading */}
         <LeftPanel

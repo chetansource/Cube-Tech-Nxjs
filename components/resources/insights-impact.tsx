@@ -4,8 +4,8 @@ export default function InsightsImpact() {
   return (
     <main className="min-h-screen bg-white pb-19">
       {/* Hero Section */}
-      <section className="px-15 py-16 max-w-8xl mx-auto">
-        <h1 className="text-4xl md:text-[75px]  mb-12 font-light md:leading-[40px]">
+      <section className="px-4 md:px-15 py-16 max-w-8xl mx-auto">
+        <h1 className=" text-4xl md:text-[75px]  mb-12 font-light md:leading-[40px]">
           WE&apos;RE IN <span className="font-semibold italic">BUSINESS</span>
         </h1>
         <h1 className="text-4xl md:text-[75px] font-light md:leading-[40px] mb-9">
@@ -20,14 +20,14 @@ export default function InsightsImpact() {
       </section>
 
       {/* Insights Section */}
-      <section className="px-15 py-16 max-w-8xl mx-auto ">
+      <section className="md:px-15 py-16 max-w-8xl mx-auto ">
         <div className="grid md:grid-cols-2 gap-16">
           {/* Left Column */}
-          <div>
-            <h2 className="md:text-[46px] font-light mb-2 md:leading-[67px] md:tracking-[3.75px]">
+          <div className="px-4 md:px-0">
+            <h2 className=" text-2xl md:text-[46px] font-light mb-2 md:leading-[67px] md:tracking-[3.75px]">
               INSIGHTS
             </h2>
-            <h2 className="md:text-[46px] font-semibold italic mb-6 md:leading-[67px] md:tracking-[3.75px]">
+            <h2 className="text-2xl md:text-[46px] font-semibold italic mb-6 md:leading-[67px] md:tracking-[3.75px]">
               & <span className="text-accent">IMPACT</span>
             </h2>
             <p className="text-base text-[#808080] md:leading-[20px] md:tracking-[0.25px] mb-8">
@@ -40,24 +40,26 @@ export default function InsightsImpact() {
           <div>
             {/* Case Study 01 */}
             <div className="mb-12 relative pb-8">
-              <h3 className="text-8xl font-thin text-gray-100 mb-4">01.</h3>
-              <p className="md:w-[60%] text-lg md:leading-[27px] md:tracking-[0.25px] mb-4">
-                An average performance enhancement of 7% was achieved in the
-                quality of the GSB layer.
-              </p>
-              <p className="md:w-[60%] text-base font-['Glacier_Indifference'] mb-6">
-                Checklists has been developed to identify the various parameters
-                related to construction quality of each layer through the entire
-                project duration.
-              </p>
-              <div className="flex items-center justify-between ">
-                <span className="text-[#808080] text-base uppercase md:leading-[20px] md:tracking-[0.25px] ">
-                  DOWNLOAD
-                </span>
-                <span className="text-[#808080] text-base uppercase md:leading-[20px] md:tracking-[0.25px] flex gap-6">
-                  /CASESTUDY
-                  <RightArrowIcon color="#5FBA51" />
-                </span>
+              <div className="px-4 md:px-0">
+                <h3 className="text-8xl font-thin text-gray-100 mb-4">01.</h3>
+                <p className="md:w-[60%] text-lg md:leading-[27px] md:tracking-[0.25px] mb-4">
+                  An average performance enhancement of 7% was achieved in the
+                  quality of the GSB layer.
+                </p>
+                <p className="md:w-[60%] text-base font-['Glacier_Indifference'] mb-6">
+                  Checklists has been developed to identify the various
+                  parameters related to construction quality of each layer
+                  through the entire project duration.
+                </p>
+                <div className="flex items-center justify-between ">
+                  <span className="text-[#808080] text-base uppercase md:leading-[20px] md:tracking-[0.25px] ">
+                    DOWNLOAD
+                  </span>
+                  <span className="text-[#808080] text-base uppercase md:leading-[20px] md:tracking-[0.25px] flex gap-6">
+                    /CASESTUDY
+                    <RightArrowIcon color="#5FBA51" />
+                  </span>
+                </div>
               </div>
 
               {/* FULL-WIDTH BORDER */}
@@ -65,7 +67,7 @@ export default function InsightsImpact() {
             </div>
 
             {/* Case Study 02 */}
-            <div className="mb-12 border-b border-accent pb-8">
+            <div className="mb-12 border-b border-accent pb-8 px-4 md:px-0">
               <h3 className="text-8xl font-thin text-gray-100 mb-4">02.</h3>
               <p className="md:w-[60%] text-lg md:leading-[27px] md:tracking-[0.25px] mb-4">
                 An average performance enhancement of 15% was achieved in the
@@ -74,7 +76,7 @@ export default function InsightsImpact() {
             </div>
 
             {/* Case Study 03 */}
-            <div className="mb-12 border-b border-accent pb-8">
+            <div className="mb-12 border-b border-accent pb-8 px-4 md:px-0">
               <h3 className="text-8xl font-thin text-gray-100 mb-4">03.</h3>
               <p className="md:w-[60%] text-lg md:leading-[27px] md:tracking-[0.25px] mb-4">
                 CubeHighways continues to set benchmarks in sustainable,
@@ -84,14 +86,14 @@ export default function InsightsImpact() {
             </div>
 
             {/* Case Study 04 */}
-            <div className="mb-12 border-b border-accent">
+            <div className="mb-12 border-b border-accent px-4 md:px-0">
               <h3 className="text-8xl font-thin text-gray-100 mb-4">04.</h3>
               <p className="md:w-[60%] text-lg md:leading-[27px] md:tracking-[0.25px] mb-8">
                 CubeHighways is at the forefront of modern infrastructure
                 development, utilizing cutting-edge technology
               </p>
             </div>
-            <div className="text-[#808080] text-base uppercase md:leading-[20px] md:tracking-[0.25px] flex gap-6">
+            <div className="text-[#808080] text-base uppercase md:leading-[20px] md:tracking-[0.25px] flex gap-6 justify-center md:justify-start ">
               SEE ALL CASESTUDIES
               <svg
                 xmlns="http://www.w3.org/2000/svg"

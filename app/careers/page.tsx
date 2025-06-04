@@ -11,8 +11,8 @@ const CareerPage = () => {
     <div className="min-h-screen">
       <Header />
       {/* hero section start */}
-      <section className="relative w-full bg-white mb-[97px] overflow-hidden h-[527px]">
-        <div className="absolute top-0 bottom-0 left-0 right-[57px] z-0">
+      <section className="relative w-full bg-white mb-15 md:mb-[97px] overflow-hidden h-[527px]">
+        <div className="absolute top-0 bottom-0 left-0 right-0 md:right-[57px] z-0">
           <Image
             src="/careerPage-banner.webp"
             alt="Hero background"
@@ -21,25 +21,25 @@ const CareerPage = () => {
             priority
           />
         </div>
-        <div className="absolute top-0 bottom-0 left-0 right-[57px] bg-black/10 z-10" />
-        <div className="relative z-20 container left-[57px]  px-4 pt-60 h-full flex flex-col justify-center">
+        <div className="absolute top-0 bottom-0 left-0 right-0 md:right-[57px] bg-black/10 z-10" />
+        <div className="relative z-20 container md:left-[57px] px-2 md:px-4 pt-60 h-full flex flex-col justify-center">
           <div className="max-w-4xl">
-            <div className="text-white text-2xl md:text-[75px]  font-light  leading-[90px] uppercase ">
+            <div className="text-white text-[52px] md:text-[75px]  font-light leading-[78px]  md:leading-[90px] uppercase ">
               JOIN OUR TEAM
             </div>
-            <div className="text-white text-2xl md:text-[75px]  font-semibold mb-12 leading-[90px] uppercase italic ">
+            <div className="text-white text-[52px] md:text-[75px]  font-semibold mb-12 leading-[78px] md:leading-[90px] uppercase italic ">
               TODAY
             </div>
           </div>
         </div>
-        <div className="absolute -bottom-px right-0 z-20 w-31 pointer-events-none">
+        <div className="absolute -bottom-px right-0 z-20 md:w-31 pointer-events-none">
           <PolygonIcon />
         </div>
       </section>
       {/* hero section stop */}
-      <CareerOpportunities/>
+      <CareerOpportunities />
       <ResumeUpload />
-      <CareerExploreMore/>
+      <CareerExploreMore />
     </div>
   );
 }

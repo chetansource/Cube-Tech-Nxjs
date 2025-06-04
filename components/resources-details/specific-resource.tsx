@@ -3,11 +3,11 @@ import { Download } from "lucide-react";
 
 export default function SpecificResource() {
   return (
-    <div className="max-w-8xl mx-auto px-16 bg-white mb-22">
+    <div className="max-w-8xl mx-auto px-4 md:px-16 bg-white mb-22">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Left Column */}
         <div className="pr-4">
-          <h1 className="md:text-[46px] font-light leading-[67px] tracking-[3.75px] text-black">
+          <h1 className="text-2xl md:text-[46px] font-light leading-[67px] tracking-[3.75px] text-black">
             3 - Days Traffic Counts
             <br />
             at 7 Entry Points of
@@ -19,7 +19,7 @@ export default function SpecificResource() {
             Posted Date: 01 Apr, 2021
           </p>
 
-          <button className="mt-6 bg-accent text-white px-6 py-3 rounded flex items-center text-xs uppercase font-bold flex gap-8">
+          <button className="mt-6 bg-accent text-white px-6 py-3 flex items-center text-xs uppercase font-bold  gap-8">
             <span>DOWNLOAD</span>
             <Download className=" h-4 w-4" />
           </button>
@@ -30,18 +30,20 @@ export default function SpecificResource() {
           <div className="flex flex-col">
             <h2 className="text-8xl font-light text-gray-100">01</h2>
 
-            <div className="grid grid-cols-2 gap-4 mt-4">
+            <div className="grid md:grid-cols-2 gap-4 mt-4 ">
               <div>
-                <h3 className="text-lg text-black md:leading-[55px] md:tracking-[0.75px]">
+                <h3 className="text-lg text-black md:leading-[55px] md:tracking-[0.75px] py-4 md:py-0 ">
                   Company Name
                 </h3>
                 <p className="text-base text-black/60 md:leading-[28px] md:tracking-[0.25px]">
-                  3 - Days Traffic Counts at 7 Entry Point of Delhi
+                  3 - Days Traffic Counts at 7{" "}
+                  <br className="block md:hidden" />
+                  Entry Point of Delhi
                 </p>
               </div>
 
               <div>
-                <h3 className="text-lg text-black md:leading-[55px] md:tracking-[0.75px]">
+                <h3 className="text-lg text-black md:leading-[55px] md:tracking-[0.75px] py-4 md:py-0">
                   Duration
                 </h3>
                 <p className="text-base text-black/60 md:leading-[28px] md:tracking-[0.25px]">
@@ -50,7 +52,7 @@ export default function SpecificResource() {
               </div>
             </div>
 
-            <p className="text-base text-black/50 mt-6 leading-[31px]">
+            <p className="text-sm md:text-base text-black/50 mt-6 leading-[31px]">
               CubeHighways conducted a 3-day traffic count survey at seven major
               entry points of Delhi to analyze vehicular movement, congestion
               levels, and traffic flow patterns. Using AI-powered video
@@ -72,7 +74,7 @@ export default function SpecificResource() {
               </p>
             </div>
 
-            <p className="text-base text-black/50 mt-6 leading-[28px]">
+            <p className="text-sm md:text-base text-black/50 mt-6 leading-[28px]">
               The survey aimed to support urban mobility planning by providing
               insights into toll booth efficiency, seasonal traffic variations,
               and congestion hotspots. The collected data will play a crucial
@@ -85,7 +87,7 @@ export default function SpecificResource() {
               Traffic Study
             </h3>
 
-            <p className="text-base text-black/50 mt-6 leading-[31px] mb-12">
+            <p className="text-sm md:text-base text-black/50 mt-6 leading-[31px] mb-12">
               This data is essential for optimizing toll booth operations,
               improving traffic decongestion strategies, and planning future
               infrastructure upgrades. Additionally, the study analyzed traffic
