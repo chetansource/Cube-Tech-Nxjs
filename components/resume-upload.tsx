@@ -1,7 +1,7 @@
 "use client";
-
 import React, { useState, useRef } from "react";
 import { usePathname } from "next/navigation";
+import { submitResume } from "@/utils/routes/SubmitResume";
 
 export default function ResumeUpload() {
   const [fullName, setFullName] = useState("");
@@ -42,10 +42,31 @@ export default function ResumeUpload() {
     fileInputRef.current?.click();
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log({ fullName, contactNo, file });
+
+    if (!file) {
+      alert("Please upload a resume file.");
+      return;
+    }
+
+    try {
+      await submitResume({
+        fullName,
+        number: contactNo,
+        file,
+        jobId: isDetailsPage ? pathname.split("/").pop() : undefined,
+      });
+
+      alert("Resume submitted successfully!");
+      // Clear form
+      setFullName("");
+      setContactNo("");
+      setFile(null);
+    } catch (err) {
+      console.error("Error submitting resume:", err);
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   return (

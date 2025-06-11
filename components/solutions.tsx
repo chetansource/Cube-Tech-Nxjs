@@ -1,12 +1,11 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import RightArrowIcon from "./icons/right-arrow"
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import RightArrowIcon from "./icons/right-arrow";
 
 export default function Solutions() {
-  // Static data for solutions
   const solutions = [
     {
       id: "01",
@@ -29,58 +28,82 @@ export default function Solutions() {
         "Our expert consultants provide end-to-end project management services for infrastructure development. From initial planning to execution and monitoring, we ensure timely delivery, cost efficiency, and adherence to quality standards across all project phases.",
       image: "/long-highway-1.webp",
     },
-  ]
+  ];
 
-  // State to track the active solution
-  const [activeSolution, setActiveSolution] = useState("01")
+  const [activeSolution, setActiveSolution] = useState<string | null>(null);
 
   return (
-    <section className=" bg-white pb-20 md:pb-[156px] relative overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6 relative">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-38">
-          {/* Left side with heading - takes 5 columns on desktop */}
-          <div className="md:col-span-5 md:absolute left-4 top-0 ">
-            <h2 className="text-2xl md:text-[46px] font-light tracking-[3.75px] leading-[67px]">
-              SOLUTIONS THAT 
+    <section className="bg-white pb-20 md:pb-[156px] relative overflow-hidden">
+      <div className="px-4 md:px-6 relative">
+        <div className="grid grid-cols-1 md:grid-cols-10">
+          {/* Left section */}
+          <div className="md:col-span-5 md:absolute md:left-12 top-0 relative">
+            <h2 className="text-2xl md:text-[46px] font-light tracking-[3.75px] leading-[31px] md:leading-[67px]">
+              SOLUTIONS THAT
               <br />
-              MAKE<span className="text-accent italic font-semibold">CHANGES</span>
+              MAKE
+              <span className="text-accent italic font-semibold px-2 md:px-4">
+                CHANGES
+              </span>
             </h2>
 
-            <Link href="/solutions" className="inline-flex items-center text-green-500 mt-6 group gap-[40px]">
+            <Link
+              href="/services"
+              className="inline-flex items-center text-accent mt-6 group gap-[40px]"
+            >
               <span className="mr-2">READ MORE</span>
               <RightArrowIcon color={"#5FBA51"} />
             </Link>
           </div>
 
-          {/* Right side with solutions - takes 7 columns on desktop */}
-          <div className="md:col-start-6 md:col-span-5 ">
+          {/* Right section */}
+          <div className="md:col-start-6 md:col-span-5 cursor-pointer">
             {solutions.map((solution, index) => (
-              <div key={solution.id} className="relative">
-                
-                {/* Solution item */}
-                <div className={` ${index !== 0 ? "border-t border-gray-100" : ""}`}>
-                  {/* Solution number and title row */}
+              <div
+                key={solution.id}
+                className="relative group"
+                onMouseEnter={() => setActiveSolution(solution.id)}
+                onMouseLeave={() => setActiveSolution(null)}
+              >
+                <div
+                  className={`${index !== 0 ? "border-t border-gray-100" : ""}`}
+                >
                   <div className="flex flex-col items-start mb-4">
-                    <div className="text-gray-100 text-[94px] font-medium align-">{solution.id}.</div>
-                    <div className="flex flex-row w-full justify-between">
-                    <div className="flex-1">
-                      <button onClick={() => setActiveSolution(solution.id)} className="text-left w-full">
-                        <h3 className="text-lg font-['Glacier_Indifference'] font-normal leading-[24px] tracking-[0.25px] hover:cursor-pointer">{solution.title}</h3>
-                      </button>
+                    <div className="text-gray-100 text-[94px] font-medium">
+                      {solution.id}.
                     </div>
-                    {solution.id !== activeSolution && (
-                      <Link href={`/solutions/${solution.id}`} className="text-accent ml-2">
-                        <RightArrowIcon color={"#5FBA51"} />
-                      </Link>                           
-                    )}
+
+                    <div className="flex flex-row w-full justify-between">
+                      <div className="flex-1">
+                        <h3 className="text-lg font-['Glacier_Indifference'] font-normal leading-[24px] tracking-[0.25px]">
+                          {solution.title}
+                        </h3>
+                      </div>
+
+                      {solution.id !== activeSolution && (
+                        <Link
+                          href={`/solutions/${solution.id}`}
+                          className="text-accent md:mr-25"
+                        >
+                          <RightArrowIcon color={"#5FBA51"} />
+                        </Link>
+                      )}
                     </div>
                   </div>
 
-                  {/* Solution content - only visible when active */}
-                  {solution.id === activeSolution && (
-                    <div className=" space-y-6 animate-fadeIn">
-                      <p className="text-base text-black/50 leading-[24px] tracking-[0.25px]">{solution.description}</p>
-                      <div className="relative h-64 w-full overflow-hidden rounded-md">
+                  {/* Expand content smoothly */}
+                  <div
+                    className={`transition-all duration-900 ease-in-out overflow-hidden ${
+                      solution.id === activeSolution
+                        ? "max-h-[1000px] opacity-100"
+                        : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <div className="w-[90%] space-y-6">
+                      <p className="text-base text-black/50 leading-[24px] tracking-[0.25px]">
+                        {solution.description}
+                      </p>
+                      <div className="relative h-64 w-full overflow-hidden">
                         <Image
                           src={solution.image || "/placeholder.svg"}
                           alt={solution.title}
@@ -89,16 +112,16 @@ export default function Solutions() {
                         />
                       </div>
                     </div>
-                  )}
+                  </div>
                 </div>
-                  {/* Full-width green line after each solution */}
-                <div className="relative w-screen   md:-mx-[69vw] h-[1px] bg-[#5FBA51] "></div>
+
+                {/* Divider */}
+                <div className="relative w-screen md:-mx-[57vw] h-[1px] bg-[#5FBA51]"></div>
               </div>
-              
             ))}
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

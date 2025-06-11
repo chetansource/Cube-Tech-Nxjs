@@ -3,6 +3,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import RightArrowIcon from "./icons/right-arrow";
 import Image from "next/image";
+import Link from "next/link";
 
 const ResourceDevelopment = () => {
   return (
@@ -45,9 +46,11 @@ const ResourceDevelopment = () => {
           Explore our <br />
           <span className="font-bold">R&D</span>
         </h1>
-        <Button className="bg-accent text-[12px] leading-[16px] tracking-[2.6px] px-[24px] py-[8px] font-bold uppercase cursor:pointer rounded-none">
-          Explore More
-        </Button>
+        <Link href="/resources" passHref>
+          <Button className="bg-accent text-[12px] leading-[16px] tracking-[2.6px] px-[24px] py-[8px] font-bold uppercase cursor-pointer rounded-none">
+            Explore More
+          </Button>
+        </Link>
       </div>
     </div>
   );

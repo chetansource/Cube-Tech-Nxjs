@@ -69,7 +69,7 @@ export default function ServicesSolutions() {
             </h2>
 
             <Link
-              href="/solutions"
+              href="/projects"
               className="inline-flex items-center text-green-500 mt-6 group gap-[40px]"
             >
               <span className="mr-2">SEE ALL PROJECTS</span>

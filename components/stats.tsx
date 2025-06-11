@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 // import UpArrowIcon from "./icons/up-arrow";
 import PlusIcon from "./icons/Plus";
-import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 interface Metric {
   value: number;
@@ -89,43 +89,36 @@ function AnimatedNumber({ number }: { number: number }) {
   return <span>{count}</span>;
 }
 
-export default function Stats({ bannerImage }: { bannerImage?: string }) {
+export default function Stats() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+
+  const isHomePage = pathname === "/";
   // const isVisible = useIntersection(sectionRef, "0px");
 
   return (
-    <div
-      className={`${
-        bannerImage ? " relative pb-[100px]" : "reative pb-[106px]"
-      } `}
-    >
-      {bannerImage && (
-        <div className="relative mx-8 md:mx-0 h-[100px] md:absolute md:top-0 md:left-10 w-[70%] md:h-[400px] -z-10">
-          <Image
-            className=""
-            src={bannerImage}
-            alt="Card Image"
-            fill
-            priority
-          />
-          {/* <div className="pl-4 md:pl-[37px] md:pr-[171px] md:text-[181px] absolute inset-0 flex items-center">
-            <div className="w-[70%] md:w-[80%] text-white font-bold">
-            </div>
-          </div> */}
+    <div className="relative pb-[106px]">
+      {isHomePage && (
+        <div className="relative mx-2 md:mx-0 h-[100px] md:h-[400px] w-full md:w-[90%] md:absolute md:top-0 md:left-10 -z-10 mb-10 md:mb-0">
+          <div className="pl-4 md:pl-[37px] md:pr-[171px] absolute bottom-0 md:translate-y-[20px] flex items-end">
+            <h1 className="text-[64px] md:text-[181.122px] leading-[56px] md:leading-[153.5px] font-normal tracking-[-2.717px] text-black/5">
+              Our Success Metrics
+            </h1>
+          </div>
         </div>
       )}
 
       <div
         ref={sectionRef}
-        className={`relative z-10 py-12  bg-transparent text-foreground`}
+        className={`relative z-10 md:py-12  bg-transparent text-foreground`}
       >
         <div className=" mx-auto px-4">
-          <div className="mt-[16%]">
-            <div className="flex overflow-x-auto gap-8 md:grid md:grid-cols-4 md:gap-[90px] scroll-smooth px-2 -mx-2 hide-scrollbar">
+          <div className="mt-0">
+            <div className="flex overflow-x-auto gap-8 md:grid md:grid-cols-4 md:gap-[100px] scroll-smooth px-2 mx-12 md:mt-[16%] hide-scrollbar">
               {metrics.map((metric, index) => (
                 <div
                   key={index}
-                  className={`min-w-[40%] max-w-[80%] md:min-w-0 md:max-w-none group flex p-4 flex-col items-start  md:gap-[80px] flex-shrink-0 md:flex-shrink md:flex-[1_0_0] self-stretch duration-200 hover:bg-[#5FBA51] hover:text-white hover:cursor-pointer`}
+                  className={` group flex p-2 md:py-4 md:px-20 flex-col items-start  md:gap-[80px] flex-shrink-0 md:flex-shrink md:flex-[1_0_0] self-stretch duration-200 hover:bg-[#5FBA51] hover:text-white hover:cursor-pointer`}
                 >
                   <div className="text-4xl md:text-[122px] font-light flex items-start ">
                     <AnimatedNumber number={metric.value} />

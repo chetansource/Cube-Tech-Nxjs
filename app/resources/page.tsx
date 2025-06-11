@@ -14,9 +14,9 @@ const ResourcesPage = () => {
       <Hero
         backgroundImage="/top-view-bridge.webp"
         title={
-          <div className="flex flex-row md:gap-8 my-8">
+          <div className="flex md:flex-col md:gap-8 my-8">
             Explore{" "}
-            <span className="text-white font-semibold italic pl-4">Latest</span>
+            <span className="text-white font-semibold italic pl-4 md:py-2">Latest</span>
           </div>
         }
       />

@@ -14,7 +14,7 @@ const AboutUsPage = () => {
   const mobileText = fullText.split(" ").slice(0, 20).join(" ") + "...";
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen ">
       <Header />
 
       {/* Hero Section */}
@@ -44,7 +44,7 @@ const AboutUsPage = () => {
       <Timeline />
 
       {/* Leadership Section */}
-      <div className="p-8 py-12">
+      <div className="p-8 py-12 md:py-22 bg-white">
         {/* Parent container: column layout on mobile, grid on md+ */}
         <div className="flex  md:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Leadership Text */}

@@ -1,185 +1,187 @@
+"use client";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { useState } from "react";
+import OurStoryIcon_1 from "../icons/OurStoryIcon-1";
+import OurStoryIcon_2 from "../icons/OurStoryIcon-2";
+import OurStoryIcon_3 from "../icons/OurStoryIcon-3";
 
 type TimelineItem = {
-  year: string;
-  side: "left" | "right";
+  year?: string;
+  side?: "left" | "right";
   title?: string;
-  content: string;
-  icon?: string;
-  image?: string;
-  isSpecial?: boolean;
+  content?: string;
   isPodcast?: boolean;
   readMoreLink?: string;
+  isIconOnly?: boolean;
 };
 
 export default function Timeline() {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  const dummyPodcast = {
+    image: "/timeline-image.webp",
+    content:
+      "This is a podcast about traffic innovations, planning strategies, and future infrastructure designs. Dive deep into the world of modern transportation.",
+    link: "#",
+  };
+
   const timelineItems: TimelineItem[] = [
     {
       year: "2007",
       side: "left",
       title: "MILESTONE",
-      content:
-        "Established with a vision for Traffic and Travel Demand Estimation.",
-      isSpecial: false,
+      content: "Vision for Traffic and Travel Demand Estimation",
+      isPodcast: true,
     },
     {
       year: "2012",
       side: "right",
-      isPodcast: true,
-      content:
-        "Discover innovations in transportation and infrastructure with expert insights. Learn about advanced forecasting tools, sustainable road designs, and future mobility trends. Stay ahead with cutting-edge solutions shaping the industry.",
-      image: "/timeline-image.webp",
-      readMoreLink: "#",
-      isSpecial: false,
-    },
-    {
-      year: "",
-      side: "right",
-      icon: "H",
-      content: "",
-      isSpecial: true,
-    },
-    {
-      year: "",
-      side: "left",
       title: "MILESTONE",
-      content:
-        "Lenders independent Engineer, Traffic Audit, Incorporated Of BHARI",
-      isSpecial: false,
+      content: "Innovations in Traffic Engineering and Forecasting",
+      isPodcast: true,
     },
+    { isIconOnly: true },
     {
       year: "2015",
-      side: "right",
-      content: "",
-      isSpecial: false,
-    },
-    {
-      year: "",
-      side: "right",
-      icon: "A",
-      content: "",
-      isSpecial: true,
-    },
-    {
-      year: "",
-      side: "right",
-      title: "MILESTONE",
-      content: "Project Management Consultancy (PMC), Launch of ATCC (OHR II)",
-      isSpecial: false,
-    },
-    {
-      year: "",
       side: "left",
-      content: "Road Safety Audit, R&D For Toll Management System (TMS)",
-      isSpecial: false,
+      title: "MILESTONE",
+      content: "Lenders Independent Engineer, Traffic Audit",
+      isPodcast: true,
     },
-    {
-      year: "",
-      side: "right",
-      icon: "⚙️",
-      content: "",
-      isSpecial: true,
-    },
+    { isIconOnly: true }, 
+    { isIconOnly: true },
     {
       year: "2021",
       side: "right",
       title: "MILESTONE",
-      content: "AI Vision Tools, Advanced Traffic Management (ATMS)",
-      isSpecial: false,
+      content: "AI Vision Tools, Advanced Traffic Management",
+      isPodcast: true,
     },
   ];
 
   return (
-    <section className="py-16 px-4 md:px-32 max-w-8xl mx-auto">
+    <section className="px-4 py-12 md:px-32 md:pb-12 max-w-8xl mx-auto bg-[#FAFAFA] md:bg-white">
       <h1 className="text-2xl md:text-[46px] font-light tracking-widest text-center pb-[53px]">
         Our <span className="font-semibold text-accent italic"> Story</span>
       </h1>
       <div className="relative">
-        {/* Center timeline line */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-green-100"></div>
+        <div className="absolute left-1/2 transform -translate-x-1/2 h-[84%] w-0.5 bg-black mt-26" />
 
-        {/* Timeline items */}
         <div className="relative z-10">
-          {timelineItems.map((item, index) => (
-            <div
-              key={index}
-              className={`flex items-center mb-16 ${
-                index === timelineItems.length - 1 ? "mb-0" : ""
-              }`}
-            >
-              {/* Left side content */}
-              <div
-                className={`w-1/2 pr-12 ${
-                  item.side === "left" ? "text-left" : "invisible"
-                }`}
-              >
-                {item.title && (
-                  <h3 className="text-[#AFB1B6]  font-base text-sm md:text-base mb-2">
+          {timelineItems.map((item, index) => {
+            const isHovered = hoveredIndex === index;
+            if (item.isIconOnly) {
+              let IconComponent;
+              const iconIndex = timelineItems
+                .slice(0, index + 1)
+                .filter((i) => i.isIconOnly).length;
+
+              // Map the icon index to the component
+              if (iconIndex === 1) IconComponent = OurStoryIcon_1;
+              if (iconIndex === 2) IconComponent = OurStoryIcon_2;
+              if (iconIndex === 3) IconComponent = OurStoryIcon_3;
+
+              return (
+                <div key={index} className="relative flex justify-center mb-16">
+                  <div className="z-20">
+                    <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center shadow-md">
+                      {IconComponent && <IconComponent />}
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+
+            const contentBlock = (
+              <div className="relative min-h-[260px] transition-all duration-500 ease-in-out">
+                {/* Milestone view */}
+                <div
+                  className={`absolute inset-0 top-20 transition-opacity duration-500 ${
+                    isHovered ? "opacity-0 pointer-events-none" : "opacity-100"
+                  }`}
+                >
+                  <h3 className="text-[#AFB1B6] text-sm md:text-base mb-2">
                     {item.title}
                   </h3>
-                )}
-                <p className="text-gray-700 text-sm md:text-lg">{item.content}</p>
-              </div>
+                  <p className="text-gray-700 text-sm md:text-lg">
+                    {item.content}
+                  </p>
+                </div>
 
-              {/* Timeline node */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center">
-                {item.year ? (
-                  <div className="w-14 h-14 rounded-full bg-green-500 text-white flex items-center justify-center font-medium">
-                    {item.year}
-                  </div>
-                ) : item.isSpecial ? (
-                  <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center text-sm">
-                    {item.icon}
-                  </div>
-                ) : null}
-              </div>
-
-              {/* Right side content */}
-              <div
-                className={`w-1/2 pl-12 ${
-                  item.side === "right" ? "" : "invisible"
-                }`}
-              >
-                {item.isPodcast ? (
-                  <div className="space-y-4">
-                    {item.image && (
-                      <div className="overflow-hidden rounded-lg">
-                        <Image
-                          src={item.image || "/placeholder.svg"}
-                          alt="Podcast image"
-                          width={400}
-                          height={200}
-                          className="w-full h-auto"
-                        />
-                      </div>
-                    )}
-                    <div className="text-gray-500 flex items-center">
+                {/* Podcast view */}
+                {item.isPodcast && (
+                  <div
+                    className={`absolute inset-0 transition-opacity duration-500 ${
+                      isHovered
+                        ? "opacity-100"
+                        : "opacity-0 pointer-events-none"
+                    }`}
+                  >
+                    <div className="w-[80%] h-[80%] md:w-[90%] md:h-[90%] relative mt-22 md:mt-10 ">
+                      <Image
+                        src={dummyPodcast.image}
+                        alt="Podcast image"
+                        layout="fill"
+                        objectFit="cover"
+                        className="rounded-lg"
+                      />
+                    </div>
+                    <div className="text-gray-500 flex items-center text-sm py-2">
                       /PODCAST <ArrowRight className="ml-2 h-4 w-4" />
                     </div>
-                    <p className="text-gray-700">{item.content}</p>
-                    {item.readMoreLink && (
-                      <a
-                        href={item.readMoreLink}
-                        className="inline-flex items-center text-green-500 font-medium"
-                      >
-                        READ MORE <ArrowRight className="ml-1 h-4 w-4" />
-                      </a>
-                    )}
+                    <p className="text-gray-700 text-sm md:text-base mt-2 w-[90%]">
+                      {dummyPodcast.content}
+                    </p>
+                    <a
+                      href={dummyPodcast.link}
+                      className="inline-flex items-center text-green-500 text-sm font-medium mt-1"
+                    >
+                      READ MORE <ArrowRight className="ml-1 h-4 w-4" />
+                    </a>
                   </div>
-                ) : (
-                  <>
-                    {item.title && (
-                      <h3 className="text-gray-400 font-light text-sm mb-2">
-                        {item.title}
-                      </h3>
-                    )}
-                    <p className="text-gray-700">{item.content}</p>
-                  </>
                 )}
               </div>
-            </div>
-          ))}
+            );
+
+            return (
+              <div
+                key={index}
+                className={`flex items-center mt-[-70] md:mt-0 ${
+                  index === timelineItems.length - 1 ? "mb-0" : ""
+                }`}
+              >
+                {/* Left content */}
+                <div
+                  className={`w-1/2 pr-[10%] ${
+                    item.side === "left" ? "text-left" : "invisible"
+                  }`}
+                >
+                  {item.side === "left" && contentBlock}
+                </div>
+
+                {/* Center node */}
+                <div
+                  className="absolute left-1/2 transform -translate-x-1/2 z-20"
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                >
+                  <div className="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center font-medium cursor-pointer shadow-md hover:scale-105 transition-transform">
+                    {item.year}
+                  </div>
+                </div>
+
+                {/* Right content */}
+                <div
+                  className={`w-1/2 pl-[10%] ${
+                    item.side === "right" ? "" : "invisible"
+                  }`}
+                >
+                  {item.side === "right" && contentBlock}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

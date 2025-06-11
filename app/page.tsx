@@ -19,7 +19,7 @@ export default function Home() {
         backgroundImage="/top-view-bridge.webp"
         title={
           <>
-            <div className="md:flex gap-4">
+            <div className="md:flex gap-4 md:pt-105">
               WE&#39;RE IN{" "}
               <div className=" text-white font-semibold italic my-5 md:my-0">
                 BUSINESS
@@ -34,15 +34,15 @@ export default function Home() {
           </>
         }
         subtitle="We provide consulting, planning and engineering design services."
-        ctaText="Get Started"
-        ctaLink="#contact"
+        ctaText="Explore Services"
+        ctaLink="services"
       />
 
       <Solutions />
       <ServiceSection />
       <Partners />
       <Projects />
-      <Stats bannerImage="/Our-Success-Metrics.webp" />
+      <Stats />
       <ResourceDevelopment />
       <Testimonial />
       <Awards />

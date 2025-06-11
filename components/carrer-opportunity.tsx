@@ -1,56 +1,51 @@
-import React from "react";
+'use client';
+import React,{useState,useEffect} from "react";
 import { MapPin } from "lucide-react";
 import RightArrowIcon from "./icons/right-arrow";
+import { getCareerPageContent, Job } from "@/utils/routes/Careers";
+import { useRouter } from "next/navigation";
 
-// Job listing type definition
-interface JobListing {
-  id: number;
-  title: string;
-  location: string;
+interface CareerHeading {
+  headingLine1: string;
+  headingLine2: string;
   description: string;
 }
 
-// Sample job listings data
-const jobListings: JobListing[] = [
-  {
-    id: 1,
-    title: "Traffic Manager",
-    location: "Pan India -Site Project",
-    description:
-      "As a Traffic Manager, you will be responsible for monitoring the operational efficiency of the team by analyzing system reports and direct observations to identify areas for improvement.",
-  },
-  {
-    id: 2,
-    title: "Traffic & Road Safety",
-    location: "Pan India -Site Project",
-    description:
-      "As a Traffic & Road Safety, ensuring traffic and road safety is a top priority through continuous monitoring and proactive interventions. Regular follow-ups on safety issues are conducted using the Road Aid App.",
-  },
-  {
-    id: 3,
-    title: "Traffic Manager",
-    location: "Pan India -Site Project",
-    description:
-      "As a Traffic Manager, you will be responsible for monitoring the operational efficiency of the team by analyzing system reports and direct observations to identify areas for improvement.",
-  },
-];
-
 export default function CareerOpportunities() {
+  const [careerHeading, setCareerHeading] = useState<CareerHeading | null>(
+    null
+  );
+  const [jobList, setJobList] = useState<Job[]>([]);
+  const router = useRouter();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const { careerHeading, jobList } = await getCareerPageContent("careerpage");
+      setCareerHeading(careerHeading ?? null);
+      setJobList(jobList);
+    };
+
+    fetchData();
+  }, []);
+
+
   return (
     <div className="min-h-screen bg-white pb-18 px-4 md:px-16 ">
       <div className="max-w-8xl mx-auto flex flex-col md:flex-row gap-8">
         {/* Left Column - 35% */}
         <div className="md:w-[43%] space-y-6">
           <h1 className="text-2xl md:text-[32px] font-bold md:leading-[40px] md:tracking-[3.75px]">
-            <span className="font-light text-black">CAREER </span>
+            <span className="font-light text-black">
+              {careerHeading?.headingLine1 || "CAREER "}{" "}
+            </span>
             <span className=" font-medium text-accent italic">
-              OPPORTUNITIES
+              {careerHeading?.headingLine2 || "OPPORTUNITIES"}
             </span>
           </h1>
 
           <p className="md:w-[70%] text-sm text-[#404040] leading-[20px]">
-            Grow your career with opportunities in research, data analytics, and
-            infrastructure development.
+            {careerHeading?.description ||
+              "Grow your career with opportunities in research, data analytics, and infrastructure development."}
           </p>
 
           <div className="pt-4">
@@ -63,7 +58,7 @@ export default function CareerOpportunities() {
 
         {/* Right Column - 65% */}
         <div className="md:w-[65%] space-y-6">
-          {jobListings.map((job) => (
+          {jobList.map((job) => (
             <div
               key={job.id}
               className="border border-gray-200 rounded-xl p-6 bg-white shadow-sm"
@@ -81,11 +76,14 @@ export default function CareerOpportunities() {
                 </div>
               </div>
 
-              <p className=" pl-[100px] md:pl-[220px] text-base font-['Glacier_Indifference']  text-[#484848] mb-6 leading-[24px]">
+              <p className=" pl-[100px] md:pl-[220px] text-base font-['Glacier_Indifference']  text-[#484848] mb-6 leading-[24px]  line-clamp-4">
                 {job.description}
               </p>
 
-              <button className="ml-[100px] md:ml-[220px] bg-accent hover:bg-green-600 text-white p-2 md:px-6 md:py-2 uppercase text-sm font-medium transition-colors">
+              <button
+                onClick={() => router.push(`/careers/details/${job.id}`)}
+                className="ml-[100px] md:ml-[220px] bg-accent hover:bg-green-600 text-white p-2 md:px-6 md:py-2 uppercase text-sm font-medium transition-colors cursor-pointer"
+              >
                 Apply Now
               </button>
             </div>

@@ -28,7 +28,7 @@ export default function Hero({
   const showTopSection = pathname === "/resources" || pathname === "/services";
   return (
     <section
-      className={`relative w-full bg-white md:mb-[97px] overflow-hidden ${height}`}
+      className={`relative w-full bg-white mb-15 md:mb-[97px] overflow-hidden ${height}`}
     >
       <div className="absolute top-0 bottom-0 left-0 right-0 md:right-[57px] z-0">
         <div className="relative h-full md:pr-[57px]">
@@ -43,12 +43,12 @@ export default function Hero({
       <div
         className={`absolute top-0 bottom-0 left-0 right-0 md:right-[57px] ${overlayOpacity} z-10`}
       />
-      <div className="flex relative z-20 container md:left-[57px]  px-4 pt-60 h-full flex-col  md:justify-center">
+      <div className="flex relative z-20 container md:left-[57px]  px-4  h-full flex-col  md:justify-center">
         <div className="max-w-5xl">
           {pathname !== "/resources" && (
-            <h1 className="text-white text-[52px] md:text-[75px]   font-light mb-12 leading-[40px] flex flex-col   md:gap-8 ">
+            <div className="text-white text-[52px] md:text-[75px] font-light mb-12 leading-[40px] flex flex-col md:gap-8 ">
               {title}
-            </h1>
+            </div>
           )}
           {subtitle && (
             <p className="font-normal text-white text-lg mb-12 max-w-xl text-[14px]">
@@ -65,7 +65,7 @@ export default function Hero({
           )}
         </div>
         {showTopSection && (
-          <div className="absolute left-0 bottom-0 p-4 md:p-8 md:grid  md:grid-cols-3 gap-4 ">
+          <div className="absolute left-0 bottom-0 p-4 md:py-18 md:grid  md:grid-cols-3 gap-4 ">
             {/* First Blurred Container */}
             <div className="relative bg-white/5 backdrop-blur-sm rounded-lg p-4 mb-8 md:mb-0 ">
               <div className="relative w-[200px] h-[100px] md:w-full md:h-[181px]">
