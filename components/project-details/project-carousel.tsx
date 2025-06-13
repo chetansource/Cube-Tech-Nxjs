@@ -89,7 +89,7 @@ export default function ProjectsCarousel() {
   }, [currentIndex]);
 
   return (
-    <div className="w-full px-4 md:px-16 mb-27 ">
+    <div className="w-full px-4 md:px-16 ">
       <div className="flex justify-between items-center mb-8 md:mb-12">
         <h2 className="text-2xl md:text-[46px] text-black/60 md:eading-[64px] md:tracking-[3.75px] uppercase">
           EXPLORE MORE <br className="block md:hidden" />
@@ -166,8 +166,8 @@ export default function ProjectsCarousel() {
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="flex flex-col h-full bg-white  shadow-sm ">
-      <div className="relative h-64 w-full mb-4 overflow-hidden ">
+    <div className="flex flex-col h-full bg-white shadow-sm ">
+      <div className="relative h-64 md:h-[392px] w-full mb-4 overflow-hidden ">
         <div className="absolute inset-0 bg-black/20 z-10"></div>
         <Image
           src={project.image || "/placeholder.svg"}

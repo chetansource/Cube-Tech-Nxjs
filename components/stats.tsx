@@ -97,7 +97,7 @@ export default function Stats() {
   // const isVisible = useIntersection(sectionRef, "0px");
 
   return (
-    <div className="relative pb-[106px]">
+    <div className="relative ">
       {isHomePage && (
         <div className="relative mx-2 md:mx-0 h-[100px] md:h-[400px] w-full md:w-[90%] md:absolute md:top-0 md:left-10 -z-10 mb-10 md:mb-0">
           <div className="pl-4 md:pl-[37px] md:pr-[171px] absolute bottom-0 md:translate-y-[20px] flex items-end">
@@ -114,7 +114,11 @@ export default function Stats() {
       >
         <div className=" mx-auto px-4">
           <div className="mt-0">
-            <div className="flex overflow-x-auto gap-8 md:grid md:grid-cols-4 md:gap-[100px] scroll-smooth px-2 mx-12 md:mt-[16%] hide-scrollbar">
+            <div
+              className={`flex overflow-x-auto gap-8 md:grid md:grid-cols-4 md:gap-[100px] scroll-smooth px-2 mx-12 hide-scrollbar ${
+                isHomePage ? "md:mt-[16%]" : ""
+              }`}
+            >
               {metrics.map((metric, index) => (
                 <div
                   key={index}
